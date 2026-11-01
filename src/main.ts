@@ -15,6 +15,8 @@ const SCREENS:Screen[]=[
  {id:'11_skins',title:'3種の着せ替え',purpose:'コインで外見を変える楽しみ',checks:['3スキン','価格と装備','性能差はない']},
  {id:'12_secret',title:'秘密のパイセン面',purpose:'10面のHARDクリア後に解放される特殊面',checks:['HARD 10/10','原作パイセンの参照','隠し面の別世界観']},
 ];
+const RASTER_BY_SCREEN:Record<string,string>={01_title:'01_title.webp',02_stage_select:'02_stage_select.webp',03_one_start:'03_one_unit_start.webp',04_blue_red_gates:'04_blue_red_gates.webp',05_enemy_wave:'05_enemies_and_damage.webp',06_boss:'07_boss_battle.webp',07_goal:'08_goal_approach.webp',08_clear:'09_clear_screen.webp',09_failed:'10_failed_screen.webp'};
+let viewMode:'layout'|'raster'='layout';
 const app=document.querySelector<HTMLElement>('#app')||document.body;
 let selected=0;
 let startX=0;
@@ -27,7 +29,7 @@ app.innerHTML=`<div class="app-shell">
  <main class="workspace">
   <section class="preview-column" aria-label="縦型画面プレビュー">
    <div class="preview-top"><span class="eyebrow">PORTRAIT SCREEN PREVIEW</span><strong id="step">01 / 12</strong></div>
-   <div class="phone-stage" id="phone-stage"><img id="screen-image" alt="選択中の縦画面コンペ" loading="eager"/></div>
+   <div class="mode-picker"><button id="mode-layout" class="active" type="button">正確な構図（SVG）</button><button id="mode-raster" type="button">高精細ラフ（WebP）</button></div><div class="phone-stage" id="phone-stage"><img id="screen-image" alt="選択中の縦画面コンペ" loading="eager"/></div>
    <div class="preview-controls"><button id="prev" type="button">← 前の画面</button><button id="next" type="button">次の画面 →</button></div>
   </section>
   <aside class="spec-column">
@@ -52,12 +54,14 @@ for(let i=0;i<SCREENS.length;i++){
 }
 function show(i:number){
  selected=(i+SCREENS.length)%SCREENS.length;const s=SCREENS[selected];
- img.src=`./concept-art/${s.id}.svg`;img.alt=`${s.title}の縦型スマホ用コンペ画面（未承認）`;
+ const raster=RASTER_BY_SCREEN[s.id];const useRaster=viewMode==="raster"&&!!raster;img.src=useRaster?`./concept-art/raster-drafts/${raster}`:`./concept-art/${s.id}.svg`;img.style.objectFit=useRaster?"contain":"fill";img.alt=`${s.title} / ${useRaster?"旧ビジュアルラフ（誤記や不整合あり）":"仕様優先の構図案"}・未承認`;
  $('step').textContent=`${String(selected+1).padStart(2,'0')} / ${SCREENS.length}`;
  $('screen-title').textContent=s.title;$('screen-purpose').textContent=s.purpose;
  $('checks').replaceChildren(...s.checks.map(c=>{const li=document.createElement('li');li.textContent=c;return li;}));
  document.querySelectorAll('.thumb').forEach((btn,n)=>btn.classList.toggle('active',n===selected));
 }
+$('mode-layout').addEventListener('click',()=>{viewMode='layout';$('mode-layout').classList.add('active');$('mode-raster').classList.remove('active');show(selected);});
+$('mode-raster').addEventListener('click',()=>{viewMode='raster';$('mode-raster').classList.add('active');$('mode-layout').classList.remove('active');show(selected);});
 $('prev').addEventListener('click',()=>show(selected-1));$('next').addEventListener('click',()=>show(selected+1));
 $('phone-stage').addEventListener('touchstart',e=>{startX=e.touches[0]?.clientX??0;},{passive:true});
 $('phone-stage').addEventListener('touchend',e=>{const d=(e.changedTouches[0]?.clientX??0)-startX;if(Math.abs(d)>55)show(selected+(d<0?1:-1));},{passive:true});
