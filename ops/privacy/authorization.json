@@ -1,0 +1,15 @@
+{
+ "repository":"SUSANO-OOO/kongai-renai-action-simulator",
+ "owner":"SUSANO-OOO",
+ "ownerId":301576978,
+ "date":"2026-11-01",
+ "historyRewriteAuthorized":true,
+ "evidence":"docs/decisions/2026-11-01-owner-answers.md",
+ "scope":"owner_email_in_commit_metadata_only",
+ "preserveTrees":true,
+ "preserveOtherAuthors":true,
+ "backup":"encrypted_before_push",
+ "concurrencyProtection":"atomic_push_with_explicit_force_with_lease",
+ "executionEvidence":"Owner-authorized email privacy workflow verification.json",
+ "serverCachesAndPullRequestRefsAreOutsideGitPushScope":true
+}

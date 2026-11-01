@@ -1,0 +1,14 @@
+{
+ "schemaVersion":1,
+ "decisionSource":"docs/decisions/2026-11-01-owner-answers.md",
+ "brand":{"name":"PAO GAMES","nameJa":"パオゲームズ"},
+ "characters":{"count":10,"ageGroup":"adult","artDirection":"stylized_cg","releaseMedium":"2d_illustrations","includeMatureMarriedImpression":true,"visibleProfileFields":["name","appearance"],"nationalityLabels":false,"dialogue":false,"romanceBranches":false,"optional3d":"post_completion_only"},
+ "audio":{"bgm":true,"gameplaySfx":true,"characterDialogue":false,"characterPleasureVocals":"excluded_not_supported","substituteCharacterVocalsApproved":false},
+ "platform":{"browserFirst":true,"orientation":"portrait","browserFamilies":["ios_safari","android_chrome"],"osTarget":"current_supported_at_release","allDevicesGuaranteed":false,"preserveArtQuality":true},
+ "distribution":{"initialPrice":0,"currency":"JPY","initialAds":false,"initialMicrotransactions":false,"initialExternalAnalytics":false,"futureAds":"desired_not_implemented","advisory":{"location":"title_screen","presentation":"small_readable","repeatedModal":false}},
+ "save":{"mode":"device_local","cloudSync":false,"accountRequired":false},
+ "sourceLicense":"MIT",
+ "paidExternalResources":{"authorized":false,"budget":null},
+ "github":{"autonomousLowRiskMerge":true,"testsAndEvidenceRequired":true,"initialProductionRelease":"awaiting_explicit_authorization"},
+ "privacy":{"historyRewriteAuthorized":true,"scope":"SUSANO-OOO/kongai-renai-action-simulator","executionStatus":"pending"}
+}
