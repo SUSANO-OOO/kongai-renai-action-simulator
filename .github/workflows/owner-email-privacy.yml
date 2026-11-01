@@ -1,0 +1,41 @@
+name: Owner-authorized email privacy
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [ops/privacy/authorization.json]
+permissions:
+  contents: write
+concurrency:
+  group: owner-email-history-cleanup
+  cancel-in-progress: false
+jobs:
+  sanitize:
+    if: github.repository == 'SUSANO-OOO/kongai-renai-action-simulator' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source before rewriting metadata
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+          npm run build
+      - name: Rewrite only explicitly authorized owner email metadata
+        run: python3 ops/privacy/sanitize_history.py --apply
+      - name: Upload encrypted recovery bundle and non-sensitive verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: owner-email-privacy-recovery
+          path: |
+            ${{ runner.temp }}/owner-email-privacy/*.p7m
+            ${{ runner.temp }}/owner-email-privacy/verification.json
+          if-no-files-found: ignore
+          retention-days: 30
