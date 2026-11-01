@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "allRunsStartWith": 1,
+  "goalMinimum": 100,
+  "coinEarners": [
+    "enemy_drop",
+    "track_pickup",
+    "clear_bonus"
+  ],
+  "skinPurchasesCosmeticOnly": true,
+  "skins": [
+    {
+      "id": "normal",
+      "cost": 0
+    },
+    {
+      "id": "spartan",
+      "cost": 500
+    },
+    {
+      "id": "nightmare",
+      "cost": 1200
+    }
+  ],
+  "userLevelCombatBonus": false,
+  "ranks": [
+    "弱小精子",
+    "迷子の精子",
+    "駆け出し精子",
+    "根性精子",
+    "暴走精子",
+    "歴戦の精子",
+    "無敵の勘違い",
+    "突撃隊長",
+    "スパルタ精子",
+    "百戦錬磨の精子",
+    "ナイトメア精子",
+    "不死身の精子",
+    "精界の覇者",
+    "伝説の生存者",
+    "精子神"
+  ]
+}
