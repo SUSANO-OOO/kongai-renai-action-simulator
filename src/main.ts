@@ -52,7 +52,7 @@ for(let i=0;i<SCREENS.length;i++){
 }
 function show(i:number){
  selected=(i+SCREENS.length)%SCREENS.length;const s=SCREENS[selected];
- img.src=`./docs/concept-art/${s.id}.svg`;img.alt=`${s.title}の縦型スマホ用コンペ画面（未承認）`;
+ img.src=`./concept-art/${s.id}.svg`;img.alt=`${s.title}の縦型スマホ用コンペ画面（未承認）`;
  $('step').textContent=`${String(selected+1).padStart(2,'0')} / ${SCREENS.length}`;
  $('screen-title').textContent=s.title;$('screen-purpose').textContent=s.purpose;
  $('checks').replaceChildren(...s.checks.map(c=>{const li=document.createElement('li');li.textContent=c;return li;}));
