@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "concept",
+  "characters": [
+    {
+      "id": 1,
+      "name": "アヤカ",
+      "originMotif": "日本",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 2,
+      "name": "ミナ",
+      "originMotif": "韓国",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 3,
+      "name": "リン",
+      "originMotif": "中国",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 4,
+      "name": "ジェシカ",
+      "originMotif": "アメリカ",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 5,
+      "name": "エミリー",
+      "originMotif": "イギリス",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 6,
+      "name": "クロエ",
+      "originMotif": "フランス",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 7,
+      "name": "ハンナ",
+      "originMotif": "ドイツ",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 8,
+      "name": "カミラ",
+      "originMotif": "ブラジル",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 9,
+      "name": "ナイラ",
+      "originMotif": "架空のアフリカ文化圏",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    },
+    {
+      "id": 10,
+      "name": "アナ",
+      "originMotif": "ロシア",
+      "ageGroup": "adult",
+      "illustrationStatus": "not_started",
+      "approval": false
+    }
+  ]
+}
