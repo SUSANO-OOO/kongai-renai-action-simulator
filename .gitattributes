@@ -1,0 +1,9 @@
+*.glb binary
+*.gltf text
+*.png binary
+*.webp binary
+*.jpg binary
+*.svg text
+*.mp3 binary
+*.ogg binary
+*.wav binary
