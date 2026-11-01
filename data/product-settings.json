@@ -1,14 +1,99 @@
 {
- "schemaVersion":1,
- "decisionSource":"docs/decisions/2026-11-01-owner-answers.md",
- "brand":{"name":"PAO GAMES","nameJa":"パオゲームズ"},
- "characters":{"count":10,"ageGroup":"adult","artDirection":"stylized_cg","releaseMedium":"2d_illustrations","includeMatureMarriedImpression":true,"visibleProfileFields":["name","appearance"],"nationalityLabels":false,"dialogue":false,"romanceBranches":false,"optional3d":"post_completion_only"},
- "audio":{"bgm":true,"gameplaySfx":true,"characterDialogue":false,"characterPleasureVocals":"excluded_not_supported","substituteCharacterVocalsApproved":false},
- "platform":{"browserFirst":true,"orientation":"portrait","browserFamilies":["ios_safari","android_chrome"],"osTarget":"current_supported_at_release","allDevicesGuaranteed":false,"preserveArtQuality":true},
- "distribution":{"initialPrice":0,"currency":"JPY","initialAds":false,"initialMicrotransactions":false,"initialExternalAnalytics":false,"futureAds":"desired_not_implemented","advisory":{"location":"title_screen","presentation":"small_readable","repeatedModal":false}},
- "save":{"mode":"device_local","cloudSync":false,"accountRequired":false},
- "sourceLicense":"MIT",
- "paidExternalResources":{"authorized":false,"budget":0,"currency":"JPY","policy":"hard_zero_incremental_spend","existingEntitlementsOnly":true,"paidApiCalls":false,"overageBilling":false,"automaticTopUps":false,"newSubscriptions":false,"paidAssets":false,"autoRenewingTrials":false,"whenQuotaExhausted":"use_verified_free_alternative_or_stop_affected_task","whenCostUnknown":"do_not_execute","reopenBudgetQuestion":false,"decisionSource":"docs/decisions/2026-11-01-zero-spend.md"},
- "github":{"autonomousLowRiskMerge":true,"testsAndEvidenceRequired":true,"initialProductionRelease":"awaiting_explicit_authorization"},
- "privacy":{"historyRewriteAuthorized":true,"scope":"SUSANO-OOO/kongai-renai-action-simulator","executionStatus":"published_refs_rewritten","evidence":"docs/audits/2026-11-01-privacy-verification.json"}
+  "schemaVersion": 1,
+  "decisionSource": "docs/decisions/2026-11-01-owner-answers.md",
+  "brand": {
+    "name": "PAO GAMES",
+    "nameJa": "パオゲームズ"
+  },
+  "characters": {
+    "count": 10,
+    "ageGroup": "adult",
+    "artDirection": "stylized_cg",
+    "releaseMedium": "2d_illustrations",
+    "includeMatureMarriedImpression": true,
+    "visibleProfileFields": [
+      "name",
+      "appearance"
+    ],
+    "nationalityLabels": false,
+    "dialogue": false,
+    "romanceBranches": false,
+    "optional3d": "post_completion_only"
+  },
+  "audio": {
+    "bgm": true,
+    "gameplaySfx": true,
+    "characterDialogue": false,
+    "characterPleasureVocals": "excluded_not_supported",
+    "substituteCharacterVocalsApproved": false
+  },
+  "platform": {
+    "browserFirst": true,
+    "orientation": "portrait",
+    "browserFamilies": [
+      "ios_safari",
+      "android_chrome"
+    ],
+    "osTarget": "current_supported_at_release",
+    "allDevicesGuaranteed": false,
+    "preserveArtQuality": true
+  },
+  "distribution": {
+    "initialPrice": 0,
+    "currency": "JPY",
+    "initialAds": false,
+    "initialMicrotransactions": false,
+    "initialExternalAnalytics": false,
+    "futureAds": "desired_not_implemented",
+    "advisory": {
+      "location": "title_screen",
+      "presentation": "small_readable",
+      "repeatedModal": false
+    }
+  },
+  "save": {
+    "mode": "device_local",
+    "cloudSync": false,
+    "accountRequired": false
+  },
+  "sourceLicense": "MIT",
+  "paidExternalResources": {
+    "authorized": false,
+    "budget": 0,
+    "currency": "JPY",
+    "policy": "hard_zero_incremental_spend",
+    "existingEntitlementsOnly": true,
+    "paidApiCalls": false,
+    "overageBilling": false,
+    "automaticTopUps": false,
+    "newSubscriptions": false,
+    "paidAssets": false,
+    "autoRenewingTrials": false,
+    "whenQuotaExhausted": "use_verified_free_alternative_or_stop_affected_task",
+    "whenCostUnknown": "do_not_execute",
+    "reopenBudgetQuestion": false,
+    "decisionSource": "docs/decisions/2026-11-01-zero-spend.md"
+  },
+  "github": {
+    "autonomousLowRiskMerge": true,
+    "testsAndEvidenceRequired": true,
+    "initialProductionRelease": "awaiting_explicit_authorization"
+  },
+  "privacy": {
+    "historyRewriteAuthorized": true,
+    "scope": "SUSANO-OOO/kongai-renai-action-simulator",
+    "executionStatus": "published_refs_rewritten",
+    "evidence": "docs/audits/2026-11-01-privacy-verification.json"
+  },
+  "gameplay": {
+    "targetStageSeconds": [
+      120,
+      180
+    ],
+    "timerHud": false,
+    "timeRecords": false,
+    "timingUse": "internal_progression_and_developer_validation_only",
+    "longerStagesMeanMoreEncounters": true,
+    "decisionSource": "docs/decisions/2026-11-02-cadence.md"
+  }
 }

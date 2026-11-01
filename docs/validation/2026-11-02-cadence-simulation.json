@@ -1,0 +1,814 @@
+{
+  "scope": "deterministic aggregate contact-loss experiment, NOT real combat or a human playtest",
+  "noTimingRecords": true,
+  "lossCoins": 0,
+  "scenarios": 21,
+  "survivableScenarios": 21,
+  "qualityNotProven": [
+    "Production combat balance",
+    "Actual 120-180 seconds on mobile hardware",
+    "Final art and animation",
+    "WebGL2 hardware performance",
+    "Human enjoyment"
+  ],
+  "results": [
+    {
+      "stage": 1,
+      "mode": "normal",
+      "targetPlaySeconds": 120,
+      "eventRows": 18,
+      "strategies": {
+        "survive": {
+          "stage": 1,
+          "mode": "normal",
+          "duration": 120,
+          "policy": "survive",
+          "events": 18,
+          "goalUnits": "1231",
+          "outcome": "clear",
+          "bankedCoins": "167"
+        },
+        "greedy": {
+          "stage": 1,
+          "mode": "normal",
+          "duration": 120,
+          "policy": "greedy",
+          "events": 18,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 1,
+          "mode": "normal",
+          "duration": 120,
+          "policy": "center",
+          "events": 18,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 1,
+      "mode": "hard",
+      "targetPlaySeconds": 120,
+      "eventRows": 18,
+      "strategies": {
+        "survive": {
+          "stage": 1,
+          "mode": "hard",
+          "duration": 120,
+          "policy": "survive",
+          "events": 18,
+          "goalUnits": "1113",
+          "outcome": "clear",
+          "bankedCoins": "147"
+        },
+        "greedy": {
+          "stage": 1,
+          "mode": "hard",
+          "duration": 120,
+          "policy": "greedy",
+          "events": 18,
+          "goalUnits": "50",
+          "outcome": "absorbed",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 1,
+          "mode": "hard",
+          "duration": 120,
+          "policy": "center",
+          "events": 18,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 2,
+      "mode": "normal",
+      "targetPlaySeconds": 126,
+      "eventRows": 19,
+      "strategies": {
+        "survive": {
+          "stage": 2,
+          "mode": "normal",
+          "duration": 126,
+          "policy": "survive",
+          "events": 19,
+          "goalUnits": "2318",
+          "outcome": "clear",
+          "bankedCoins": "179"
+        },
+        "greedy": {
+          "stage": 2,
+          "mode": "normal",
+          "duration": 126,
+          "policy": "greedy",
+          "events": 19,
+          "goalUnits": "508",
+          "outcome": "clear",
+          "bankedCoins": "274"
+        },
+        "center": {
+          "stage": 2,
+          "mode": "normal",
+          "duration": 126,
+          "policy": "center",
+          "events": 19,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 2,
+      "mode": "hard",
+      "targetPlaySeconds": 126,
+      "eventRows": 19,
+      "strategies": {
+        "survive": {
+          "stage": 2,
+          "mode": "hard",
+          "duration": 126,
+          "policy": "survive",
+          "events": 19,
+          "goalUnits": "2089",
+          "outcome": "clear",
+          "bankedCoins": "159"
+        },
+        "greedy": {
+          "stage": 2,
+          "mode": "hard",
+          "duration": 126,
+          "policy": "greedy",
+          "events": 19,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 2,
+          "mode": "hard",
+          "duration": 126,
+          "policy": "center",
+          "events": 19,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 3,
+      "mode": "normal",
+      "targetPlaySeconds": 132,
+      "eventRows": 20,
+      "strategies": {
+        "survive": {
+          "stage": 3,
+          "mode": "normal",
+          "duration": 132,
+          "policy": "survive",
+          "events": 20,
+          "goalUnits": "3124",
+          "outcome": "clear",
+          "bankedCoins": "191"
+        },
+        "greedy": {
+          "stage": 3,
+          "mode": "normal",
+          "duration": 132,
+          "policy": "greedy",
+          "events": 20,
+          "goalUnits": "87",
+          "outcome": "absorbed",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 3,
+          "mode": "normal",
+          "duration": 132,
+          "policy": "center",
+          "events": 20,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 3,
+      "mode": "hard",
+      "targetPlaySeconds": 132,
+      "eventRows": 20,
+      "strategies": {
+        "survive": {
+          "stage": 3,
+          "mode": "hard",
+          "duration": 132,
+          "policy": "survive",
+          "events": 20,
+          "goalUnits": "2817",
+          "outcome": "clear",
+          "bankedCoins": "171"
+        },
+        "greedy": {
+          "stage": 3,
+          "mode": "hard",
+          "duration": 132,
+          "policy": "greedy",
+          "events": 20,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 3,
+          "mode": "hard",
+          "duration": 132,
+          "policy": "center",
+          "events": 20,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 4,
+      "mode": "normal",
+      "targetPlaySeconds": 138,
+      "eventRows": 21,
+      "strategies": {
+        "survive": {
+          "stage": 4,
+          "mode": "normal",
+          "duration": 138,
+          "policy": "survive",
+          "events": 21,
+          "goalUnits": "4195",
+          "outcome": "clear",
+          "bankedCoins": "203"
+        },
+        "greedy": {
+          "stage": 4,
+          "mode": "normal",
+          "duration": 138,
+          "policy": "greedy",
+          "events": 21,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 4,
+          "mode": "normal",
+          "duration": 138,
+          "policy": "center",
+          "events": 21,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 4,
+      "mode": "hard",
+      "targetPlaySeconds": 138,
+      "eventRows": 21,
+      "strategies": {
+        "survive": {
+          "stage": 4,
+          "mode": "hard",
+          "duration": 138,
+          "policy": "survive",
+          "events": 21,
+          "goalUnits": "3827",
+          "outcome": "clear",
+          "bankedCoins": "183"
+        },
+        "greedy": {
+          "stage": 4,
+          "mode": "hard",
+          "duration": 138,
+          "policy": "greedy",
+          "events": 21,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 4,
+          "mode": "hard",
+          "duration": 138,
+          "policy": "center",
+          "events": 21,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 5,
+      "mode": "normal",
+      "targetPlaySeconds": 144,
+      "eventRows": 22,
+      "strategies": {
+        "survive": {
+          "stage": 5,
+          "mode": "normal",
+          "duration": 144,
+          "policy": "survive",
+          "events": 22,
+          "goalUnits": "3354",
+          "outcome": "clear",
+          "bankedCoins": "200"
+        },
+        "greedy": {
+          "stage": 5,
+          "mode": "normal",
+          "duration": 144,
+          "policy": "greedy",
+          "events": 22,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 5,
+          "mode": "normal",
+          "duration": 144,
+          "policy": "center",
+          "events": 22,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 5,
+      "mode": "hard",
+      "targetPlaySeconds": 144,
+      "eventRows": 22,
+      "strategies": {
+        "survive": {
+          "stage": 5,
+          "mode": "hard",
+          "duration": 144,
+          "policy": "survive",
+          "events": 22,
+          "goalUnits": "3055",
+          "outcome": "clear",
+          "bankedCoins": "190"
+        },
+        "greedy": {
+          "stage": 5,
+          "mode": "hard",
+          "duration": 144,
+          "policy": "greedy",
+          "events": 22,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 5,
+          "mode": "hard",
+          "duration": 144,
+          "policy": "center",
+          "events": 22,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 6,
+      "mode": "normal",
+      "targetPlaySeconds": 150,
+      "eventRows": 23,
+      "strategies": {
+        "survive": {
+          "stage": 6,
+          "mode": "normal",
+          "duration": 150,
+          "policy": "survive",
+          "events": 23,
+          "goalUnits": "3856",
+          "outcome": "clear",
+          "bankedCoins": "208"
+        },
+        "greedy": {
+          "stage": 6,
+          "mode": "normal",
+          "duration": 150,
+          "policy": "greedy",
+          "events": 23,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 6,
+          "mode": "normal",
+          "duration": 150,
+          "policy": "center",
+          "events": 23,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 6,
+      "mode": "hard",
+      "targetPlaySeconds": 150,
+      "eventRows": 23,
+      "strategies": {
+        "survive": {
+          "stage": 6,
+          "mode": "hard",
+          "duration": 150,
+          "policy": "survive",
+          "events": 23,
+          "goalUnits": "3494",
+          "outcome": "clear",
+          "bankedCoins": "208"
+        },
+        "greedy": {
+          "stage": 6,
+          "mode": "hard",
+          "duration": 150,
+          "policy": "greedy",
+          "events": 23,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 6,
+          "mode": "hard",
+          "duration": 150,
+          "policy": "center",
+          "events": 23,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 7,
+      "mode": "normal",
+      "targetPlaySeconds": 156,
+      "eventRows": 24,
+      "strategies": {
+        "survive": {
+          "stage": 7,
+          "mode": "normal",
+          "duration": 156,
+          "policy": "survive",
+          "events": 24,
+          "goalUnits": "3778",
+          "outcome": "clear",
+          "bankedCoins": "213"
+        },
+        "greedy": {
+          "stage": 7,
+          "mode": "normal",
+          "duration": 156,
+          "policy": "greedy",
+          "events": 24,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 7,
+          "mode": "normal",
+          "duration": 156,
+          "policy": "center",
+          "events": 24,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 7,
+      "mode": "hard",
+      "targetPlaySeconds": 156,
+      "eventRows": 24,
+      "strategies": {
+        "survive": {
+          "stage": 7,
+          "mode": "hard",
+          "duration": 156,
+          "policy": "survive",
+          "events": 24,
+          "goalUnits": "3406",
+          "outcome": "clear",
+          "bankedCoins": "213"
+        },
+        "greedy": {
+          "stage": 7,
+          "mode": "hard",
+          "duration": 156,
+          "policy": "greedy",
+          "events": 24,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 7,
+          "mode": "hard",
+          "duration": 156,
+          "policy": "center",
+          "events": 24,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 8,
+      "mode": "normal",
+      "targetPlaySeconds": 162,
+      "eventRows": 25,
+      "strategies": {
+        "survive": {
+          "stage": 8,
+          "mode": "normal",
+          "duration": 162,
+          "policy": "survive",
+          "events": 25,
+          "goalUnits": "7347",
+          "outcome": "clear",
+          "bankedCoins": "225"
+        },
+        "greedy": {
+          "stage": 8,
+          "mode": "normal",
+          "duration": 162,
+          "policy": "greedy",
+          "events": 25,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 8,
+          "mode": "normal",
+          "duration": 162,
+          "policy": "center",
+          "events": 25,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 8,
+      "mode": "hard",
+      "targetPlaySeconds": 162,
+      "eventRows": 25,
+      "strategies": {
+        "survive": {
+          "stage": 8,
+          "mode": "hard",
+          "duration": 162,
+          "policy": "survive",
+          "events": 25,
+          "goalUnits": "6614",
+          "outcome": "clear",
+          "bankedCoins": "225"
+        },
+        "greedy": {
+          "stage": 8,
+          "mode": "hard",
+          "duration": 162,
+          "policy": "greedy",
+          "events": 25,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 8,
+          "mode": "hard",
+          "duration": 162,
+          "policy": "center",
+          "events": 25,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "mode": "normal",
+      "targetPlaySeconds": 168,
+      "eventRows": 26,
+      "strategies": {
+        "survive": {
+          "stage": 9,
+          "mode": "normal",
+          "duration": 168,
+          "policy": "survive",
+          "events": 26,
+          "goalUnits": "10059",
+          "outcome": "clear",
+          "bankedCoins": "237"
+        },
+        "greedy": {
+          "stage": 9,
+          "mode": "normal",
+          "duration": 168,
+          "policy": "greedy",
+          "events": 26,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 9,
+          "mode": "normal",
+          "duration": 168,
+          "policy": "center",
+          "events": 26,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 9,
+      "mode": "hard",
+      "targetPlaySeconds": 168,
+      "eventRows": 26,
+      "strategies": {
+        "survive": {
+          "stage": 9,
+          "mode": "hard",
+          "duration": 168,
+          "policy": "survive",
+          "events": 26,
+          "goalUnits": "9001",
+          "outcome": "clear",
+          "bankedCoins": "237"
+        },
+        "greedy": {
+          "stage": 9,
+          "mode": "hard",
+          "duration": 168,
+          "policy": "greedy",
+          "events": 26,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 9,
+          "mode": "hard",
+          "duration": 168,
+          "policy": "center",
+          "events": 26,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 10,
+      "mode": "normal",
+      "targetPlaySeconds": 180,
+      "eventRows": 28,
+      "strategies": {
+        "survive": {
+          "stage": 10,
+          "mode": "normal",
+          "duration": 180,
+          "policy": "survive",
+          "events": 28,
+          "goalUnits": "11237",
+          "outcome": "clear",
+          "bankedCoins": "256"
+        },
+        "greedy": {
+          "stage": 10,
+          "mode": "normal",
+          "duration": 180,
+          "policy": "greedy",
+          "events": 28,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 10,
+          "mode": "normal",
+          "duration": 180,
+          "policy": "center",
+          "events": 28,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 10,
+      "mode": "hard",
+      "targetPlaySeconds": 180,
+      "eventRows": 28,
+      "strategies": {
+        "survive": {
+          "stage": 10,
+          "mode": "hard",
+          "duration": 180,
+          "policy": "survive",
+          "events": 28,
+          "goalUnits": "10016",
+          "outcome": "clear",
+          "bankedCoins": "256"
+        },
+        "greedy": {
+          "stage": 10,
+          "mode": "hard",
+          "duration": 180,
+          "policy": "greedy",
+          "events": 28,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 10,
+          "mode": "hard",
+          "duration": 180,
+          "policy": "center",
+          "events": 28,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    },
+    {
+      "stage": 11,
+      "mode": "hard",
+      "targetPlaySeconds": 180,
+      "eventRows": 28,
+      "strategies": {
+        "survive": {
+          "stage": 11,
+          "mode": "hard",
+          "duration": 180,
+          "policy": "survive",
+          "events": 28,
+          "goalUnits": "9778",
+          "outcome": "clear",
+          "bankedCoins": "256"
+        },
+        "greedy": {
+          "stage": 11,
+          "mode": "hard",
+          "duration": 180,
+          "policy": "greedy",
+          "events": 28,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        },
+        "center": {
+          "stage": 11,
+          "mode": "hard",
+          "duration": 180,
+          "policy": "center",
+          "events": 28,
+          "goalUnits": "0",
+          "outcome": "exhausted",
+          "bankedCoins": "0"
+        }
+      }
+    }
+  ]
+}

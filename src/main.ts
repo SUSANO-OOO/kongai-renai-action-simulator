@@ -38,7 +38,7 @@ app.innerHTML=`<div class="app-shell">
    <p id="screen-purpose"></p>
    <div class="notice"><b>これは完成ゲームではありません。</b><p>SVG・WebPとも未承認の旧ラフです。国籍表記・外見数・ゴール表現などに現行仕様との差があります。右の検収項目と最新仕様を優先し、完成素材として転用しないでください。</p></div>
    <h2>この画面の検収項目</h2><ul id="checks"></ul>
-   <h2>画面一覧</h2><nav id="thumbnail-list" aria-label="各画面を選択"></nav>
+   <p><a class="spec-link" href="./labs/cadence/index.html">3レーン・2〜3分の制作検証を開く ↗</a></p><h2>画面一覧</h2><nav id="thumbnail-list" aria-label="各画面を選択"></nav>
    <div class="milestone"><b>必須ルール</b><p>全11ステージで1体開始。青ゲートは増員、赤ゲートは減員。3経路の見た目に対して移動は自由。ゴール時100体以上で成功。</p></div>
    <a class="spec-link" href="https://github.com/SUSANO-OOO/kongai-renai-action-simulator/blob/main/AGENTS.md" target="_blank" rel="noopener">Codex開発ルールを見る ↗</a>
   </aside>

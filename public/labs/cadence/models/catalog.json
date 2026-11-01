@@ -1,0 +1,72 @@
+{
+  "status": "unapproved_blockouts",
+  "source": "scripts/generate-cadence-assets.mjs",
+  "files": [
+    {
+      "file": "player-normal.glb",
+      "bytes": 7208,
+      "nodes": 8,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "player-spartan.glb",
+      "bytes": 7292,
+      "nodes": 9,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "player-nightmare.glb",
+      "bytes": 7408,
+      "nodes": 10,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "player-aurora.glb",
+      "bytes": 7212,
+      "nodes": 8,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "enemy-zombie.glb",
+      "bytes": 7112,
+      "nodes": 5,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "gate-blue.glb",
+      "bytes": 6328,
+      "nodes": 3,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "gate-red.glb",
+      "bytes": 6324,
+      "nodes": 3,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "goal-neutral.glb",
+      "bytes": 11236,
+      "nodes": 44,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "goal-clear.glb",
+      "bytes": 11148,
+      "nodes": 44,
+      "status": "unapproved_blockout"
+    },
+    {
+      "file": "goal-failed.glb",
+      "bytes": 11192,
+      "nodes": 44,
+      "status": "unapproved_blockout"
+    }
+  ],
+  "limitations": [
+    "No rig or animations",
+    "Not artistically approved",
+    "Not a finished stage environment",
+    "Browser lab uses matching procedural shapes, not a GLB importer"
+  ]
+}

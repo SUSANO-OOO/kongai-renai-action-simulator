@@ -1,4 +1,7 @@
 # 婚外恋愛アクションシミュレーター
+
+> **2026-11-02更新**：タイム記録・タイマーHUDなし、1面約2〜3分、敗北回収コイン0。Codexは全素材制作から開始可。全素材の本人承認が必要なのは本格キャンペーン統合前であり、作業開始の前ではない。最新根拠は `docs/decisions/2026-11-02-cadence.md`。
+
 ## PAO GAMES（パオゲームズ）
 
 スマホ縦型の3D群集ランナー＋自動射撃。1体から増え、3進路を自由に動き、群れを守り100体以上でゴールする。
@@ -6,7 +9,7 @@
 **現在は素材先行の制作準備。実行対象は旧コンペ閲覧サイトで、完成ゲームではありません。全素材と本人査定は未完了です。**
 
 ## 入口・費用
-[AGENTS](AGENTS.md) → [HANDOFF](docs/HANDOFF.md) → [追加支出0円](docs/decisions/2026-11-01-zero-spend.md) → [本人回答](docs/decisions/2026-11-01-owner-answers.md) → [製品契約](docs/PRODUCT_CONTRACT.md)。[CODEX_START_PROMPT](CODEX_START_PROMPT.md)は素材査定後の本編引き渡し用。
+[AGENTS](AGENTS.md) → [HANDOFF](docs/HANDOFF.md) → [追加支出0円](docs/decisions/2026-11-01-zero-spend.md) → [本人回答](docs/decisions/2026-11-01-owner-answers.md) → [製品契約](docs/PRODUCT_CONTRACT.md)。[CODEX_START_PROMPT](CODEX_START_PROMPT.md)は素材制作から開始する指示。
 **追加支出は0円。既存枠と確認済み無料手段だけ。有料API・購入・超過課金・自動チャージ・新規契約は禁止。** [費用方針](docs/ZERO_SPEND_POLICY.md)。低リスクPRは検査済みなら自律main統合可。
 
 ## 確定仕様

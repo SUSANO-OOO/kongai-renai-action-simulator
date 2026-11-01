@@ -1,95 +1,700 @@
 {
- "schemaVersion":2,
- "approvalGate":"user explicit approval",
- "approvedForProduction":false,
- "producerReview":{"status":"not_requested","actor":null,"evidence":null,"assetSetSha256":null},
- "auditRounds":[],
- "statuses":["not_started","in_progress","preview_ready","qa_passed","awaiting_user_review","approved","rework_required"],
- "requiredAssets":[
- {"id":"character-01","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-02","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-03","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-04","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-05","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-06","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-07","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-08","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-09","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"character-10","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"stage-01-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-02-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-03-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-04-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-05-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-06-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-07-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-08-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-09-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-10-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"stage-11-environment","category":"environment","status":"not_started","approved":false,"required":true},
- {"id":"player-base","category":"player","status":"not_started","approved":false,"required":true},
- {"id":"player-skin-01","category":"player","status":"not_started","approved":false,"required":true},
- {"id":"player-skin-02","category":"player","status":"not_started","approved":false,"required":true},
- {"id":"player-skin-03","category":"player","status":"not_started","approved":false,"required":true},
- {"id":"enemy-zombie","category":"enemy","status":"not_started","approved":false,"required":true},
- {"id":"enemy-slime","category":"enemy","status":"not_started","approved":false,"required":true},
- {"id":"enemy-immune","category":"enemy","status":"not_started","approved":false,"required":true},
- {"id":"boss-armored","category":"boss","status":"not_started","approved":false,"required":true},
- {"id":"boss-immune","category":"boss","status":"not_started","approved":false,"required":true},
- {"id":"boss-final","category":"boss","status":"not_started","approved":false,"required":true},
- {"id":"ui-title","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-stages","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-game-hud","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-result","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-shop","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-settings","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-ranks","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"vfx-blue-gate","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-red-gate","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-clear","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-fail","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"se-blue-gate","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-red-gate","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-clear","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-fail","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"bgm-title","category":"bgm","status":"not_started","approved":false,"required":true},
- {"id":"bgm-run","category":"bgm","status":"not_started","approved":false,"required":true},
- {"id":"bgm-boss","category":"bgm","status":"not_started","approved":false,"required":true},
- {"id":"character-paisen","category":"character","status":"not_started","approved":false,"required":true},
- {"id":"prop-coin","category":"prop","status":"not_started","approved":false,"required":true},
- {"id":"prop-blue-gate","category":"prop","status":"not_started","approved":false,"required":true},
- {"id":"prop-red-gate","category":"prop","status":"not_started","approved":false,"required":true},
- {"id":"prop-upgrade-gate","category":"prop","status":"not_started","approved":false,"required":true},
- {"id":"prop-goal","category":"prop","status":"not_started","approved":false,"required":true},
- {"id":"obstacle-wall","category":"obstacle","status":"not_started","approved":false,"required":true},
- {"id":"obstacle-moving","category":"obstacle","status":"not_started","approved":false,"required":true},
- {"id":"obstacle-mucus","category":"obstacle","status":"not_started","approved":false,"required":true},
- {"id":"anim-player","category":"animation","status":"not_started","approved":false,"required":true},
- {"id":"anim-enemies","category":"animation","status":"not_started","approved":false,"required":true},
- {"id":"anim-bosses","category":"animation","status":"not_started","approved":false,"required":true},
- {"id":"ui-loading","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-load-error","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-pause","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-secret-unlock","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-controls","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-credits","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-save-recovery","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-rotation-notice","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"vfx-shot","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-hit","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-enemy-down","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-coin","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"vfx-upgrade","category":"vfx","status":"not_started","approved":false,"required":true},
- {"id":"se-shot","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-hit","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-enemy-down","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-coin","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-boss-warning","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-ui-confirm","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"se-ui-cancel","category":"se","status":"not_started","approved":false,"required":true},
- {"id":"bgm-result","category":"bgm","status":"not_started","approved":false,"required":true},
- {"id":"bgm-secret","category":"bgm","status":"not_started","approved":false,"required":true},
- {"id":"ui-typography","category":"ui","status":"not_started","approved":false,"required":true},
- {"id":"ui-icons","category":"ui","status":"not_started","approved":false,"required":true}
- ]
+  "schemaVersion": 2,
+  "approvalGate": "user explicit approval",
+  "approvedForProduction": false,
+  "producerReview": {
+    "status": "not_requested",
+    "actor": null,
+    "evidence": null,
+    "assetSetSha256": null
+  },
+  "auditRounds": [],
+  "statuses": [
+    "not_started",
+    "in_progress",
+    "preview_ready",
+    "qa_passed",
+    "awaiting_user_review",
+    "approved",
+    "rework_required"
+  ],
+  "requiredAssets": [
+    {
+      "id": "character-01",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-02",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-03",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-04",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-05",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-06",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-07",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-08",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-09",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-10",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-01-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-02-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-03-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-04-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-05-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-06-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-07-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-08-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-09-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-10-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "stage-11-environment",
+      "category": "environment",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "player-base",
+      "category": "player",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/player-normal.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "player-skin-01",
+      "category": "player",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/player-spartan.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "player-skin-02",
+      "category": "player",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/player-nightmare.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "player-skin-03",
+      "category": "player",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/player-aurora.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "enemy-zombie",
+      "category": "enemy",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/enemy-zombie.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "enemy-slime",
+      "category": "enemy",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "enemy-immune",
+      "category": "enemy",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "boss-armored",
+      "category": "boss",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "boss-immune",
+      "category": "boss",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "boss-final",
+      "category": "boss",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-title",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-stages",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-game-hud",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-result",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-shop",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-settings",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-ranks",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-blue-gate",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-red-gate",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-clear",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-fail",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-blue-gate",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-red-gate",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-clear",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-fail",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "bgm-title",
+      "category": "bgm",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "bgm-run",
+      "category": "bgm",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "bgm-boss",
+      "category": "bgm",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "character-paisen",
+      "category": "character",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "prop-coin",
+      "category": "prop",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "prop-blue-gate",
+      "category": "prop",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/gate-blue.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "prop-red-gate",
+      "category": "prop",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/gate-red.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "prop-upgrade-gate",
+      "category": "prop",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "prop-goal",
+      "category": "prop",
+      "status": "in_progress",
+      "approved": false,
+      "required": true,
+      "sourceFiles": [
+        "scripts/generate-cadence-assets.mjs"
+      ],
+      "runtimeFiles": [
+        "public/labs/cadence/models/goal-neutral.glb",
+        "public/labs/cadence/models/goal-clear.glb",
+        "public/labs/cadence/models/goal-failed.glb"
+      ],
+      "previewFiles": [
+        "public/labs/cadence/index.html"
+      ],
+      "notes": "Unapproved static blockout; lab uses matching procedural shapes, not a GLB importer. No final animation, artist QA or production approval."
+    },
+    {
+      "id": "obstacle-wall",
+      "category": "obstacle",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "obstacle-moving",
+      "category": "obstacle",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "obstacle-mucus",
+      "category": "obstacle",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "anim-player",
+      "category": "animation",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "anim-enemies",
+      "category": "animation",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "anim-bosses",
+      "category": "animation",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-loading",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-load-error",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-pause",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-secret-unlock",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-controls",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-credits",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-save-recovery",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-rotation-notice",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-shot",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-hit",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-enemy-down",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-coin",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "vfx-upgrade",
+      "category": "vfx",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-shot",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-hit",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-enemy-down",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-coin",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-boss-warning",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-ui-confirm",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "se-ui-cancel",
+      "category": "se",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "bgm-result",
+      "category": "bgm",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "bgm-secret",
+      "category": "bgm",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-typography",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    },
+    {
+      "id": "ui-icons",
+      "category": "ui",
+      "status": "not_started",
+      "approved": false,
+      "required": true
+    }
+  ]
 }

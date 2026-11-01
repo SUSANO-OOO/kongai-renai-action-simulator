@@ -1,27 +1,83 @@
 {
- "schemaVersion":2,
- "phase":"asset_preparation",
- "runtime":"concept_review_gallery",
- "ownerDecisionRecord":"docs/decisions/2026-11-01-owner-answers.md",
- "openProductDecisions":["Q11"],
- "conditionalDecisions":[],
- "costPolicy":"hard_zero_incremental_spend",
- "handoff":{"requireAllAssetsBeforeImplementation":true,"handoffReady":false,"reason":"production_assets_and_producer_review_pending","gate":"npm run check:handoff"},
- "autonomousLowRiskMergeAuthorized":true,
- "privacyRewriteAuthorized":true,
- "privacyExecutionEvidence":"docs/audits/2026-11-01-privacy-verification.json",
- "releaseChecks":[
-  {"id":"production_game","status":"not_verified","evidence":null},
-  {"id":"normal_10","status":"not_verified","evidence":null},
-  {"id":"hard_10","status":"not_verified","evidence":null},
-  {"id":"secret_stage","status":"not_verified","evidence":null},
-  {"id":"game_feel","status":"not_verified","evidence":null},
-  {"id":"ios_safari_real_device","status":"not_verified","evidence":null},
-  {"id":"android_chrome_real_device","status":"not_verified","evidence":null},
-  {"id":"audio","status":"not_verified","evidence":null},
-  {"id":"save_recovery","status":"not_verified","evidence":null},
-  {"id":"licenses_privacy","status":"not_verified","evidence":null},
-  {"id":"deployment_smoke_rollback","status":"not_verified","evidence":null}
- ],
- "releaseAuthorization":{"status":"not_requested","evidence":null}
+  "schemaVersion": 2,
+  "phase": "asset_preparation",
+  "runtime": "concept_review_gallery",
+  "ownerDecisionRecord": "docs/decisions/2026-11-01-owner-answers.md",
+  "openProductDecisions": [
+    "Q11"
+  ],
+  "conditionalDecisions": [],
+  "costPolicy": "hard_zero_incremental_spend",
+  "handoff": {
+    "readyToBeginAssetProduction": true,
+    "productionImplementationReady": false,
+    "allAssetsApprovalRequiredForProduction": true,
+    "gate": "npm run check:handoff",
+    "productionGate": "npm run check:assets",
+    "correction": "Codex may start asset production before approval; producer approval gates campaign integration, not starting asset work."
+  },
+  "autonomousLowRiskMergeAuthorized": true,
+  "privacyRewriteAuthorized": true,
+  "privacyExecutionEvidence": "docs/audits/2026-11-01-privacy-verification.json",
+  "releaseChecks": [
+    {
+      "id": "production_game",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "normal_10",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "hard_10",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "secret_stage",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "game_feel",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "ios_safari_real_device",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "android_chrome_real_device",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "audio",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "save_recovery",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "licenses_privacy",
+      "status": "not_verified",
+      "evidence": null
+    },
+    {
+      "id": "deployment_smoke_rollback",
+      "status": "not_verified",
+      "evidence": null
+    }
+  ],
+  "releaseAuthorization": {
+    "status": "not_requested",
+    "evidence": null
+  }
 }

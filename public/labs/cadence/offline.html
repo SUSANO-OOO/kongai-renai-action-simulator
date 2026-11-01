@@ -1,0 +1,134 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#150b20"><title>PAO GAMES — 3レーン制作検証</title><style>
+:root{font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;color:#faf4fc;background:#100c18;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#382039,#100c18 65%)}main{max-width:1000px;margin:auto;padding:18px;display:grid;grid-template-columns:minmax(260px,430px) 1fr;gap:28px;align-items:start}.device{position:relative;width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#25101e;box-shadow:0 20px 60px #0008;border:1px solid #765b70;touch-action:none}canvas{position:absolute;width:100%;height:100%;display:block}.labels{pointer-events:none}.hud{position:absolute;left:12px;right:12px;top:16px;display:flex;justify-content:space-between;gap:8px}.stat{background:#110d20d9;border:1px solid #a6a0bc44;border-radius:12px;padding:8px 12px;min-width:76px;text-align:center;backdrop-filter:blur(8px)}.stat small{display:block;color:#b9afcd;font-size:9px;letter-spacing:1.5px}.stat strong{display:block;font-size:22px;line-height:1.4}.stat.stage strong{font-size:15px}.stat.coins strong{color:#ffdc8d}.progress{position:absolute;top:84px;left:18px;right:18px;height:5px;background:#ffffff26;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:#87e5f1}.phase{position:absolute;top:101px;width:100%;text-align:center;font-size:12px;text-shadow:0 2px 5px #000}.bottom{position:absolute;bottom:16px;left:12px;right:12px;padding:9px;border-radius:12px;text-align:center;background:#110d20dd;border:1px solid #ffffff30;font-size:12px;color:#e8dce9}.result{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(#110b2422,#110b2490);text-align:center}.result h2{font-size:32px;letter-spacing:1.5px;margin:0 0 12px;text-shadow:0 0 24px #ffdfa6}.result p{margin:7px}.card{padding:22px;border:1px solid #60445f;border-radius:16px;background:#1b1229a8}.eyebrow{color:#eaaccb;font-size:11px;letter-spacing:2px}h1{font-size:27px;line-height:1.4;margin:10px 0}p{font-size:14px;line-height:1.8;color:#d3c5d6}label{display:block;font-size:12px;margin:16px 0 7px;color:#c9b9ce}select,button{font:inherit;border:1px solid #775c80;border-radius:10px;padding:10px;background:#2c1a3b;color:#fff}select{width:100%}button{cursor:pointer}button.primary{background:#97395f;border-color:#f08baa;font-weight:750}button:disabled{opacity:.5}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.row>*{flex:1}.toggle{display:flex;align-items:center;gap:9px;font-size:13px;margin:14px 0}.toggle input{accent-color:#ee8ac2}#error{display:none;color:#ffbccf;white-space:pre-wrap}.note{font-size:12px;color:#b0a3bb}summary{cursor:pointer;font-size:12px;color:#e6adc9}.status{font-size:12px;border-top:1px solid #5b405a;margin-top:16px;padding-top:15px;color:#b9a8c2}@media(max-width:700px){main{display:flex;flex-direction:column;align-items:center;padding:10px;gap:15px}.device{max-width:430px}.card{max-width:430px;width:100%;padding:18px}h1{font-size:23px}}
+</style></head><body><main><section class="device" id="device" aria-label="スマホ縦型3D検証シーン"><canvas id="view"></canvas><canvas class="labels" id="labels"></canvas><div class="hud"><div class="stat"><small>UNITS</small><strong id="units">1</strong></div><div class="stat stage"><small>PAO GAMES</small><strong id="stageLabel">STAGE 01</strong></div><div class="stat coins"><small>仮コイン</small><strong id="coins">0</strong></div></div><div class="progress"><i id="progress"></i></div><div class="phase" id="phase">3つの進路・横移動は自由</div><div class="bottom" id="hint">左右にドラッグ / 自動前進・射撃</div><div class="result" id="result"><h2 id="outcome"></h2><p id="summary"></p><p id="banked"></p><button id="retry" class="primary">もう一度</button></div></section>
+<section class="card"><div class="eyebrow">PAO GAMES / DEVELOPMENT LAB</div><h1>3レーンの見え方と<br>2〜3分の物量を確認</h1><p>実際の3D描画・左右操作・人数変化・同じゴールの白金／紫分岐を確認する制作検証です。完成ゲーム・承認済み素材ではありません。</p><label for="stage">検証するステージ（ここでは全て選択可能）</label><select id="stage"></select><label for="mode">難易度</label><select id="mode"><option value="normal">NORMAL</option><option value="hard">HARD</option></select><label for="skin">形状・配色案（初期＋追加3）</label><select id="skin"><option value="0">ノーマル</option><option value="1">スパルタ</option><option value="2">ナイトメア</option><option value="3">オーロラ</option></select><label class="toggle"><input type="checkbox" id="auto" checked>自動操作で物量を見る（検証専用）</label><div class="row"><button id="start" class="primary">開始</button><button id="pause">一時停止</button></div><div class="row"><button id="preview99">99体・失敗演出を見る</button><button id="preview100">100体・成功演出を見る</button></div><p class="note">タイム記録・タイマー表示・ランキングはありません。敗北時に今回拾ったコインは持ち帰れません。この検証では保存や課金、外部通信は行いません。</p><details><summary>検証の限界と操作</summary><p class="note">敵の接触損失は比較用の数値モデルです。射撃の見た目はありますが、個別の弾・敵HP・物理判定を完成させたものではありません。最終的な勝ちやすさや面白さの証明ではありません。左右ドラッグ／矢印キー。タブが隠れると停止します。演出確認ボタンは人数注入の検査で、ステージクリア実績には数えません。</p></details><div id="status" class="status">接続不要・無料のローカル検証</div><pre id="error"></pre></section></main><script>/* PAO GAMES: deterministic pacing/route experiment, not production combat.
+   Exact integer rules shared by browser and Node; no network or persistent save. */
+(function(scope){
+'use strict';
+const DURATIONS=[120,126,132,138,144,150,156,162,168,180,180];
+const TYPES=['増殖区画','交戦区画','経路判断','増殖区画','突破区画','強化区画'];
+function integer(v){if(typeof v==='number'&&(!Number.isSafeInteger(v)||v<0))throw new TypeError('Nonnegative exact count required');if(!['bigint','number'].includes(typeof v)&&!(typeof v==='string'&&/^\d+$/.test(v)))throw new TypeError('Invalid count');const n=BigInt(v);if(n<0n)throw new RangeError('Negative count');return n;}
+function gate(n,op,v){n=integer(n);v=integer(v);if(v===0n)throw new RangeError('Zero operand');if(!['add','multiply','subtract','divide','none'].includes(op))throw new RangeError('Unknown operation');if(n===0n)return 0n;if(op==='add')return n+v;if(op==='multiply')return n*v;if(op==='subtract')return n>v?n-v:0n;if(op==='divide')return n/v;return n;}
+const label=o=>({multiply:'×',add:'+',subtract:'−',divide:'÷',none:''}[o.op])+(o.op==='none'?(o.power?'強化':'通路'):o.value);
+function option(op,value,loss=0,coins=0,power=0,riskBps=0){const o={op,value,loss,coins,power,riskBps};return {...o,label:label(o)};}
+function plan(stage=1,mode='normal'){
+ if(!Number.isInteger(stage)||stage<1||stage>11)throw new RangeError('Stage 1..11 required');
+ if(!['normal','hard'].includes(mode)||stage===11&&mode!=='hard')throw new RangeError('Invalid mode; secret is HARD only');
+ const duration=DURATIONS[stage-1],hard=mode==='hard',rows=Math.floor((duration-18)/6),events=[];
+ for(let i=0;i<rows;i++){
+  const at=6+i*6,intensity=1+(stage-1)*.07+(hard?.35:0),turn=(i+stage+(hard?1:0))%3;let cells,kind;
+  if(i===0){cells=[option('multiply',5),option('multiply',3,0,6),option('add',3)];kind='gate';}
+  else if(i===1){cells=[option('multiply',4),option('add',12,0,8),option('multiply',3)];kind='gate';}
+  else if(i%6===2){const loss=Math.ceil((24+i*11)*intensity);cells=[option('none',1,Math.ceil(loss/4),22,0,4500),option('none',1,0,7,0,1800),option('none',1,Math.ceil(loss/8),13,0,3000)];kind='wave';}
+  else if(i%6===3){cells=[option('multiply',3,Math.ceil((15+i*3)*intensity),18,0,6000),option('add',90+i*5,0,8),option('divide',2,0,50)];kind='gate';}
+  else if(i%6===4){const loss=Math.ceil((20+i*5)*intensity);cells=[option('subtract',Math.max(1,Math.floor(loss/2)),0,40),option('add',50,loss,15),option('none',1,0,5)];kind='wall';}
+  else if(i%6===5){cells=[option('none',1,0,10,1),option('multiply',2,Math.ceil((45+i*3)*intensity),12),option('add',75,0,6)];kind='upgrade';}
+  else{cells=[option('multiply',5,Math.ceil((15+i*2)*intensity),12,0,7200),option('add',75+i*4,0,5),option('divide',2,0,45)];kind='gate';}
+  events.push({id:`s${stage}-${mode}-${i}`,at,kind,phase:TYPES[i%6],options:[cells[turn],cells[(1+turn)%3],cells[(2+turn)%3]],previewSeconds:4.5});
+ }
+ events.push({id:`s${stage}-${mode}-boss`,at:duration-12,kind:'boss',phase:'最終突破',previewSeconds:5,options:[option('none',1,Math.ceil(25*stage*(hard?1.6:1)),80,0,4000),option('none',1,Math.ceil(12*stage*(hard?1.4:1)),35,0,1800),option('none',1,Math.ceil(18*stage*(hard?1.5:1)),60,0,3000)]});
+ return {stage,mode,duration,visualLanes:3,freeX:true,initialUnits:1,goalMin:100,events,goalAt:duration,scope:'cadence_and_route_lab'};
+}
+function initial(){return {units:1n,power:0,coins:0n,kills:0,seen:[],finished:false,outcome:null};}
+function evaluate(state,opt){const after=gate(state.units,opt.op,opt.value),ratio=Math.max(0,(opt.riskBps||0)-state.power*150),loss=after*BigInt(ratio)/10000n+BigInt(Math.ceil(opt.loss/(1+state.power*.6)));return after>loss?after-loss:0n;}
+function choose(state,event,policy='survive'){if(policy==='center')return 1;let best=0;const score=o=>policy==='greedy'?gate(state.units,o.op,o.value):evaluate(state,o);for(let i=1;i<3;i++)if(score(event.options[i])>score(event.options[best]))best=i;return best;}
+function apply(state,event,lane){if(!Number.isInteger(lane)||lane<0||lane>2)throw new RangeError('Three lanes only');if(state.finished||state.seen.includes(event.id))return state;const o=event.options[lane],before=state.units,units=evaluate(state,o),eliminated=units===0n;return {...state,units,power:state.power+o.power,coins:state.coins+BigInt(eliminated?0:o.coins),kills:state.kills+(o.loss?Math.ceil(Math.min(Number(before>1000n?1000n:before),o.loss)/12):0),seen:[...state.seen,event.id],finished:eliminated,outcome:eliminated?'exhausted':null};}
+function finish(state){if(state.finished)return state;return {...state,finished:true,outcome:state.units>=100n?'clear':state.units===0n?'exhausted':'absorbed'};}
+function payout(state){return state.finished&&state.outcome==='clear'?state.coins:0n;}
+function simulate(p,policy='survive'){let state=initial();const trace=[];for(const event of p.events){const lane=choose(state,event,policy);state=apply(state,event,lane);trace.push({event:event.id,at:event.at,lane,units:state.units.toString(),coins:state.coins.toString()});if(state.finished)break;}state=finish(state);return {stage:p.stage,mode:p.mode,duration:p.duration,policy,events:p.events.length,goalUnits:state.units.toString(),outcome:state.outcome,bankedCoins:payout(state).toString(),trace};}
+function format(n){const s=integer(n).toString();return s.length>7?s.slice(0,3)+'… ('+s.length+'桁)':Number(n).toLocaleString('en-US');}
+scope.KRCadence={DURATIONS,integer,gate,plan,initial,evaluate,choose,apply,finish,payout,simulate,format};
+})(typeof window==='undefined'?globalThis:window);
+</script><script>/* Original WebGL2 renderer and explicit CPU inspection fallback. No external requests. */
+(function(scope){'use strict';
+const C={floor:[.30,.055,.13],wall:[.47,.09,.21],rim:[.70,.19,.32],white:[.83,.98,1],blue:[.04,.60,.96],red:[.95,.13,.30],gold:[1,.69,.20],purple:[.45,.16,.67]};
+const vs=`#version 300 es
+precision highp float;layout(location=0) in vec3 p;layout(location=1) in vec3 norm;layout(location=2) in vec3 ip;layout(location=3) in vec3 scale;layout(location=4) in vec3 col;uniform mat4 vp;out vec3 n;out vec3 c;out vec3 world;void main(){world=p*scale+ip;n=normalize(norm/max(scale,vec3(.01)));c=col;gl_Position=vp*vec4(world,1.);}`;
+const fs=`#version 300 es
+precision highp float;in vec3 n;in vec3 c;in vec3 world;out vec4 outColor;void main(){vec3 normal=normalize(n);float d=max(dot(normal,normalize(vec3(-.4,1.,.8))),0.);float back=max(dot(normal,normalize(vec3(.6,.4,-1.))),0.);vec3 v=normalize(vec3(0.,9.,14.)-world);vec3 h=normalize(v+normalize(vec3(-.4,1.,.8)));float spec=pow(max(dot(normal,h),0.),35.)*.35;vec3 lit=c*(.38+d*.65+back*.20)+vec3(spec);float fog=smoothstep(18.,83.,-world.z);lit=mix(lit,vec3(.13,.018,.074),fog*.92);outColor=vec4(pow(lit,vec3(.88)),1.);}`;
+function perspective(fovy,aspect,near,far){let f=1/Math.tan(fovy/2),nf=1/(near-far);return new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)*nf,-1,0,0,2*far*near*nf,0]);}
+function normalize(v){const l=Math.hypot(...v)||1;return v.map(x=>x/l);}
+function cross(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+function lookAt(eye,target){const z=normalize(eye.map((v,i)=>v-target[i])),x=normalize(cross([0,1,0],z)),y=cross(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-x.reduce((s,v,i)=>s+v*eye[i],0),-y.reduce((s,v,i)=>s+v*eye[i],0),-z.reduce((s,v,i)=>s+v*eye[i],0),1]);}
+function multiply(a,b){const m=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)m[c*4+r]+=a[k*4+r]*b[c*4+k];return m;}
+function sphere(){const verts=[],point=(i,j)=>{let a=i/8*Math.PI,b=j/12*Math.PI*2;return[Math.sin(a)*Math.cos(b),Math.cos(a),Math.sin(a)*Math.sin(b)];};for(let i=0;i<8;i++)for(let j=0;j<12;j++){const a=point(i,j),b=point(i+1,j),c=point(i+1,j+1),d=point(i,j+1);for(const p of[a,b,c,a,c,d])verts.push(...p,...p);}return new Float32Array(verts);}
+function cube(){const v=[];for(let axis=0;axis<3;axis++)for(const sign of[-1,1]){const n=[0,0,0];n[axis]=sign;const pts=[];for(const[a,b]of[[-1,-1],[1,-1],[1,1],[-1,1]]){let p=[0,0,0];p[axis]=sign;p[(axis+1)%3]=a;p[(axis+2)%3]=b;pts.push(p);}for(const i of[0,1,2,0,2,3])v.push(...pts[i],...n);}return new Float32Array(v);}
+function Renderer(canvas,labelCanvas){
+ const gl=canvas.getContext('webgl2',{alpha:false,antialias:true,powerPreference:'default'}),software=gl?null:canvas.getContext('2d');if(!gl&&!software)throw Error('描画を初期化できません。');
+ let program=null,vpLocation=null,ball=null,box=null;const ballData=sphere(),boxData=cube();
+ if(gl){const compile=(type,text)=>{const sh=gl.createShader(type);gl.shaderSource(sh,text);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh;};program=gl.createProgram();gl.attachShader(program,compile(gl.VERTEX_SHADER,vs));gl.attachShader(program,compile(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));vpLocation=gl.getUniformLocation(program,'vp');}
+ function mesh(data){const vao=gl.createVertexArray();gl.bindVertexArray(vao);const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,data,gl.STATIC_DRAW);for(let i=0;i<2;i++){gl.enableVertexAttribArray(i);gl.vertexAttribPointer(i,3,gl.FLOAT,false,24,i*12);}const inst=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,inst);for(let i=2;i<5;i++){gl.enableVertexAttribArray(i);gl.vertexAttribPointer(i,3,gl.FLOAT,false,36,(i-2)*12);gl.vertexAttribDivisor(i,1);}return{vao,inst,size:data.length/6};}
+ if(gl){ball=mesh(ballData);box=mesh(boxData);gl.enable(gl.DEPTH_TEST);}
+ let vp,width=390,height=694;const ctx=labelCanvas.getContext('2d');
+ function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,1.5);width=r.width;height=r.height;canvas.width=Math.round(width*d);canvas.height=Math.round(height*d);labelCanvas.width=canvas.width;labelCanvas.height=canvas.height;ctx.setTransform(d,0,0,d,0,0);vp=multiply(perspective(Math.PI/3,width/height,.1,140),lookAt([0,9,14],[0,0,-17]));}
+ function project(x,y,z){const w=vp[3]*x+vp[7]*y+vp[11]*z+vp[15];if(w<=0)return null;return{x:((vp[0]*x+vp[4]*y+vp[8]*z+vp[12])/w*.5+.5)*width,y:(.5-(vp[1]*x+vp[5]*y+vp[9]*z+vp[13])/w*.5)*height,w};}
+ let lastCount=0;
+ function draw(model){const b=[],q=[],add=(arr,x,y,z,sx,sy,sz,c)=>arr.push(x,y,z,sx,sy,sz,...c);const t=model.t,travel=t*8,phase=model.result||'',endTime=model.endAge||0;
+  add(q,0,-.38,-35,3.8,.35,45,C.floor);for(const x of[-1.2,1.2])add(q,x,-.005,-35,.025,.012,45,[.89,.43,.48]);
+  for(let j=0;j<(gl?38:19);j++){const spacing=gl?3:6,z=10-j*spacing+(travel%spacing);for(const x of[-4,4]){add(b,x,.65,z,.72,1.2,1.65,C.wall);add(b,x*.97,1.3,z-.5,.50,.40,.9,C.rim);}}
+  for(let i=0;i<16;i++){const z=8-i*6+(travel%6);for(let j=0;j<4;j++)add(b,(j%2?1:-1)*(4.25+j*.1),2.2+(j>>1)*1.2,z,.38,.65,1.2,[.40,.065,.19]);}
+  ctx.clearRect(0,0,width,height);
+  for(const event of model.plan.events.filter(e=>e.at>=t&&e.at<=t+10)){const z=-(event.at-t)*8;
+   for(let lane=0;lane<3;lane++){const o=event.options[lane],x=(lane-1)*2.4,negative=['subtract','divide'].includes(o.op),color=negative?C.red:o.power?C.gold:C.blue;
+    if(o.op!=='none'||o.power){for(const dx of[-.96,.96])add(q,x+dx,1.15,z,.065,1.15,.10,color);add(q,x,2.25,z,.98,.10,.11,color);}
+    const num=(o.loss||o.riskBps)?(event.kind==='boss'?1:5+lane*2):0;
+    for(let j=0;j<num;j++){const ex=x+(j%3-1)*.40,ez=z-1.1-Math.floor(j/3)*.6,sy=event.kind==='boss'?.95:.28;add(b,ex,.40,ez,event.kind==='boss'?.65:.25,sy,event.kind==='boss'?.6:.28,[.31,.24,.36]);add(b,ex-.09,.51,ez+.2,.04,.05,.04,C.red);add(b,ex+.09,.51,ez+.2,.04,.05,.04,C.red);}
+    if(event.kind==='wall'&&lane===2)add(q,x+.85,.58,z-.4,.28,.6,.4,C.rim);
+    for(let j=0;j<Math.min(4,Math.ceil(o.coins/10));j++)add(b,x+(j-1.5)*.24,.28,z+1,.12,.12,.04,C.gold);
+    const p=project(x,2.6,z);if(p&&p.y>72&&p.y<height-110){const font=Math.max(10,Math.min(29,240/p.w));ctx.font=`800 ${font}px system-ui`;ctx.textAlign='center';ctx.lineWidth=4;ctx.strokeStyle='rgba(10,6,20,.9)';ctx.strokeText(o.label,p.x,p.y);ctx.fillStyle=negative?'#ffb5c7':o.power?'#ffe1a4':'#c9f8ff';ctx.fillText(o.label,p.x,p.y);if(o.loss||o.riskBps){ctx.font=`600 ${Math.max(9,font*.45)}px system-ui`;const risk=`危険 ${o.riskBps?o.riskBps/100+'% + ':''}${o.loss}`;ctx.strokeText(risk,p.x,p.y+font*.72);ctx.fillStyle='#ffb5c7';ctx.fillText(risk,p.x,p.y+font*.72);}}
+   }
+  }
+  if(model.plan.duration-t<11||phase){const z=phase?-8:-(model.plan.duration-t)*8,clear=phase==='clear',fail=phase==='absorbed',color=fail?C.purple:clear?[1,.86,.51]:[.98,.72,.48];for(let i=0;i<44;i++){const a=i/44*Math.PI*2;add(b,Math.cos(a)*2.6,2.4+Math.sin(a)*2.5,z,.24,.30,.35,color);}add(b,0,2.4,z-.3,2.25,2.2,.18,fail?[.07,.015,.13]:[.95,.78,.51]);if(phase)for(let j=0;j<70;j++){const a=j*2.399+endTime*(fail?-2:1),r=clear?(endTime*1.3+j%4*.4):Math.max(.1,3-(endTime+j*.03)%3);add(b,Math.cos(a)*r,2+Math.sin(a)*r,-7-j%5,.03,.05,.05,clear?[1,.97,.8]:[.7,.29,.95]);}}
+  const n=model.state.units,drawCount=n===0n?0:Math.min(gl?150:30,Number(n>150n?150n:n));lastCount=drawCount;const skin=[C.white,[.91,.67,.25],[.52,.27,.83],[.21,.85,.76]][model.skin||0];
+  for(let i=0;i<drawCount;i++){const row=Math.floor(i/10),col=i%10,dense=Math.min(1,drawCount/15);let x=model.x+(col-4.5)*.13*dense,z=-row*.20+(i%2)*.05,y=.26+Math.sin(t*4+i)*.025;if(drawCount===1)x=model.x;if(phase){const f=Math.min(1,endTime/2);x*=1-f;z+=(phase==='absorbed'?-9:-6)*f;y+=f*1.5;}add(b,x,y,z,.15,.17,.23,skin);for(let j=1;j<=3;j++)add(b,x+Math.sin(t*10+i+j)*.035*j,y-.015,z+j*.13,.034*(1-j*.17),.032,j===1?.13:.09,skin);}
+  if(model.running&&!model.state.finished&&t>2)for(let i=0;i<12;i++)add(b,model.x+Math.sin(i*3)*.22,.42,-((t*18+i*2)%22),.025,.025,.26,C.blue);
+  if(gl){gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(.13,.018,.074,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(program);gl.uniformMatrix4fv(vpLocation,false,vp);for(const[m,data]of[[box,q],[ball,b]]){gl.bindVertexArray(m.vao);gl.bindBuffer(gl.ARRAY_BUFFER,m.inst);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.DYNAMIC_DRAW);gl.drawArraysInstanced(gl.TRIANGLES,0,m.size,data.length/9);}}
+  else{const tris=[];
+   for(const[geometry,instances]of[[boxData,q],[ballData,b]])for(let o=0;o<instances.length;o+=9){const xyz=instances.slice(o,o+3),sc=instances.slice(o+3,o+6),color=instances.slice(o+6,o+9);
+    if(geometry===ballData){const p=project(...xyz),px=project(xyz[0]+sc[0],xyz[1],xyz[2]),py=project(xyz[0],xyz[1]+sc[1],xyz[2]),pz=project(xyz[0],xyz[1],xyz[2]+sc[2]);if(p&&px&&py&&pz){const rx=Math.max(.6,Math.abs(px.x-p.x)),ry=Math.max(.6,Math.abs(py.y-p.y),Math.abs(pz.y-p.y));tris.push({sphere:true,p,rx,ry,z:xyz[2],color});}continue;}
+    for(let v=0;v<geometry.length;v+=18){const pts=[],n=[0,0,0];let z=0;for(let k=0;k<3;k++){const pos=[0,1,2].map(a=>geometry[v+k*6+a]*sc[a]+xyz[a]),pp=project(...pos);if(!pp)break;pts.push(pp);z+=pos[2]/3;for(let a=0;a<3;a++)n[a]+=geometry[v+k*6+3+a]/Math.max(.01,sc[a]);}if(pts.length<3||pts.every(p=>p.y<0)||pts.every(p=>p.y>height)||pts.every(p=>p.x<0)||pts.every(p=>p.x>width))continue;const nn=normalize(n),light=.4+Math.max(0,nn[0]*-.3+nn[1]*.8+nn[2]*.4)*.68,fog=Math.max(0,Math.min(.9,(-z-18)/65)),dark=[.13,.018,.074],rgb=color.map((c,a)=>Math.round(Math.pow(c*light*(1-fog)+dark[a]*fog,.88)*255));tris.push({pts,z,fill:`rgb(${rgb.join(',')})`});}
+   }
+   software.setTransform(canvas.width/width,0,0,canvas.height/height,0,0);software.fillStyle='#210513';software.fillRect(0,0,width,height);tris.sort((a,b)=>a.z-b.z);
+   for(const tr of tris){if(tr.sphere){const rgb=tr.color.map(c=>Math.round(c*255)),g=software.createRadialGradient(tr.p.x-tr.rx*.25,tr.p.y-tr.ry*.3,0,tr.p.x,tr.p.y,Math.max(tr.rx,tr.ry));g.addColorStop(0,`rgb(${rgb.map(c=>Math.min(255,c*1.15)).join(',')})`);g.addColorStop(.7,`rgb(${rgb.join(',')})`);g.addColorStop(1,`rgb(${rgb.map(c=>c*.45).join(',')})`);software.beginPath();software.ellipse(tr.p.x,tr.p.y,tr.rx,tr.ry,0,0,Math.PI*2);software.fillStyle=g;software.fill();continue;}software.beginPath();software.moveTo(tr.pts[0].x,tr.pts[0].y);software.lineTo(tr.pts[1].x,tr.pts[1].y);software.lineTo(tr.pts[2].x,tr.pts[2].y);software.closePath();software.fillStyle=tr.fill;software.fill();}
+  }
+  return {renderedUnits:drawCount,instances:(b.length+q.length)/9,renderer:gl?'WebGL2':'CPU検証表示（GPU未検証）'};
+ }
+ resize();return{draw,resize,project,get count(){return lastCount;}};
+}
+scope.KRRenderer=Renderer;
+})(window);
+</script><script>(function(){
+'use strict';
+const $=id=>document.getElementById(id),core=window.KRCadence;
+for(let i=1;i<=11;i++){const o=document.createElement('option');o.value=i;o.textContent=i===11?'SECRET / パイセン (HARD)':'STAGE '+String(i).padStart(2,'0');$('stage').append(o);}
+let renderer,model={t:0,x:0,plan:core.plan(),state:core.initial(),running:false,skin:0,result:null,endAge:0},targetX=0,eventIndex=0,last=0,pointer=null,dragStart=0,dragX=0,disposed=false;
+function setMode(){const secret=$('stage').value==='11';$('mode').options[0].disabled=secret;if(secret)$('mode').value='hard';}
+function reset(){setMode();model={t:0,x:0,plan:core.plan(Number($('stage').value),$('mode').value),state:core.initial(),running:true,skin:Number($('skin').value),result:null,endAge:0};targetX=0;eventIndex=0;$('result').style.display='none';$('pause').textContent='一時停止';$('hint').textContent='左右にドラッグ / 自動前進・射撃';last=performance.now();}
+function end(outcome){model.result=outcome;model.endAge=0;model.running=false;$('hint').textContent=outcome==='clear'?'白金色に包まれてクリア':outcome==='absorbed'?'紫の渦に吸収されて失敗':'全滅・今回のコインは0';}
+function resultText(){const clear=model.result==='clear';$('outcome').textContent=clear?'SUCCESS':'FAILED';$('outcome').style.color=clear?'#ffe7ac':'#dbb9ff';$('summary').textContent='最終人数 '+core.format(model.state.units);$('banked').textContent='持ち帰りコイン '+core.format(core.payout(model.state));$('result').style.display='flex';}
+function frame(now){if(disposed)return;const dt=Math.min(.25,Math.max(0,(now-(last||now))/1000));last=now;
+ if(model.running&&!model.result){model.t=Math.min(model.plan.duration,model.t+dt);const next=model.plan.events[eventIndex];
+  if($('auto').checked&&next)targetX=(core.choose(model.state,next)-1)*2.4;
+  model.x+=(targetX-model.x)*Math.min(1,dt*14);
+  if(next&&model.t>=next.at){const lane=Math.min(2,Math.max(0,Math.round(model.x/2.4)+1));model.state=core.apply(model.state,next,lane);eventIndex++;if(model.state.finished)end(model.state.outcome);}
+  if(!model.result&&model.t>=model.plan.goalAt){model.state=core.finish(model.state);end(model.state.outcome);}
+ }
+ if(model.result){model.endAge+=dt;if(model.endAge>=2.3)resultText();}
+ const stats=renderer.draw(model);$('units').textContent=core.format(model.state.units);$('coins').textContent=core.format(model.state.coins);$('stageLabel').textContent=(model.plan.stage===11?'SECRET':'STAGE '+String(model.plan.stage).padStart(2,'0'))+' / '+model.plan.mode.toUpperCase();$('progress').style.width=(model.t/model.plan.duration*100)+'%';
+ $('phase').textContent=model.result?'GOAL':model.plan.events[eventIndex]?.phase||'ゴールへ';$('status').textContent=stats.renderer+' / 代表表示個体 '+stats.renderedUnits+' / 未承認の制作サンプル';requestAnimationFrame(frame);
+}
+function preview(n){reset();model.t=model.plan.duration;model.state=core.finish({...core.initial(),units:BigInt(n),coins:40n});end(model.state.outcome);$('hint').textContent+='（境界検査）';}
+$('device').addEventListener('pointerdown',e=>{if(e.target.tagName==='BUTTON')return;pointer=e.pointerId;dragStart=e.clientX;dragX=model.x;$('auto').checked=false;$('device').setPointerCapture(pointer);});
+$('device').addEventListener('pointermove',e=>{if(e.pointerId!==pointer)return;targetX=Math.max(-3.25,Math.min(3.25,dragX+(e.clientX-dragStart)/$('device').clientWidth*7.2));});
+for(const kind of ['pointerup','pointercancel','lostpointercapture'])$('device').addEventListener(kind,()=>{pointer=null;});
+window.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();$('auto').checked=false;targetX=Math.max(-3.25,Math.min(3.25,targetX+(e.key==='ArrowLeft'?-.4:.4)));}});
+$('start').onclick=reset;$('retry').onclick=reset;$('stage').onchange=setMode;$('skin').onchange=()=>model.skin=Number($('skin').value);
+$('pause').onclick=()=>{if(model.result)return;model.running=!model.running;$('pause').textContent=model.running?'一時停止':'再開';last=performance.now();};
+$('preview99').onclick=()=>preview(99);$('preview100').onclick=()=>preview(100);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){model.running=false;$('pause').textContent='再開';}});
+$('view').addEventListener('webglcontextlost',e=>{e.preventDefault();model.running=false;disposed=true;$('error').textContent='描画コンテキストが失われました。再読込してください。';$('error').style.display='block';});
+try{renderer=window.KRRenderer($('view'),$('labels'));new ResizeObserver(()=>renderer.resize()).observe($('device'));requestAnimationFrame(frame);}catch(e){$('error').textContent=String(e.message||e);$('error').style.display='block';$('start').disabled=true;}
+// Inspection only: no production save or fabricated player record.
+window.__KR_LAB__={get state(){return model;},stepTo(t){if(!Number.isFinite(t)||t<0||t>model.plan.duration)throw Error('Invalid test position');reset();for(const ev of model.plan.events){if(ev.at>t)break;model.state=core.apply(model.state,ev,core.choose(model.state,ev));eventIndex++;if(model.state.finished)break;}model.t=t;model.running=false;},preview};
+})();
+</script></body></html>
