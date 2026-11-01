@@ -1,0 +1,102 @@
+[
+  {
+    "file": "01_title.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "02_stage_select.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "03_one_unit_start.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "04_blue_red_gates.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "05_enemies_and_damage.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "06_enemy_battle.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "07_boss_battle.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "08_goal_approach.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "09_clear_screen.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  },
+  {
+    "file": "10_failed_screen.png",
+    "ratio": "9:16",
+    "pixels": [
+      900,
+      1600
+    ],
+    "status": "concept-only / 未承認",
+    "source": "AI-generated concept storyboard cropped to standalone screen"
+  }
+]

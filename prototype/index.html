@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#130f1c" />
+  <meta name="description" content="婚外恋愛アクションシミュレーター — 片手で動かす、異色の縦型3D群体ランナー。" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <title>婚外恋愛アクションシミュレーター | 3D RUNNER</title>
+</head>
+<body>
+  <main id="app" aria-label="婚外恋愛アクションシミュレーター">
+    <canvas id="game-canvas" aria-label="3Dゲームフィールド"></canvas>
+    <div class="film-grain" aria-hidden="true"></div>
+
+    <header id="game-hud" class="hud is-hidden" aria-live="off">
+      <div class="hud-main-row">
+        <div class="hud-level"><span class="hud-overline">STAGE</span><strong id="hud-stage">01</strong></div>
+        <div class="hud-progress-wrap"><div class="hud-progress-meta"><span id="hud-stage-name">始動の回廊</span><span id="hud-progress-text">0%</span></div><div class="hud-progress"><div id="hud-progress-fill"></div></div></div>
+        <button id="btn-pause" class="hud-pause" type="button" aria-label="一時停止">Ⅱ</button>
+      </div>
+      <div class="hud-stats"><div class="hud-count"><small>YOUR SQUAD</small><b id="hud-count">10</b></div><div class="hud-modifiers" id="hud-modifiers">ATK Lv.1</div></div>
+      <div id="hud-boss" class="hud-boss is-hidden"><div class="hud-boss-text"><span id="hud-boss-name">RIVAL</span><span id="hud-boss-pct">100%</span></div><div class="hud-boss-rail"><i id="hud-boss-bar"></i></div></div>
+    </header>
+
+    <div id="game-feedback" class="game-feedback" aria-live="polite"></div>
+    <div id="drag-hint" class="drag-hint is-hidden"><span class="drag-arrow">←</span><span>DRAG TO MOVE</span><span class="drag-arrow">→</span></div>
+    <div class="build-label">PROTOTYPE · v0.1.0</div>
+
+    <section id="screen-title" class="screen title-screen" aria-label="タイトル画面">
+      <div class="title-overline"><span class="mark-dot"></span> PROJECT KONGAI / 01</div>
+      <div class="title-copy">
+        <div class="title-kicker">ONE FINGER. ONE SURVIVAL.</div>
+        <h1>婚外恋愛<br /><span>アクション</span><br />シミュレーター</h1>
+        <p>倍率を選べ。大群で突破しろ。<br />生体SFランナー、開幕。</p>
+      </div>
+      <div class="menu-panel">
+        <div class="menu-next"><div><small>CONTINUE FROM</small><strong id="menu-stage">STAGE 01</strong></div><span class="menu-stage-line" id="menu-stage-name">始動の回廊</span></div>
+        <button id="btn-start" class="btn-primary" type="button"><span>ゲームスタート</span><span class="btn-arrow">→</span></button>
+        <div class="menu-subactions"><button id="btn-level-select" type="button">STAGE SELECT</button><button id="btn-skins" type="button">SKIN LAB</button><button id="btn-settings" type="button">SETTINGS</button></div>
+      </div>
+      <div class="title-bottom-note">SWIPE / MULTIPLY / SHOOT / SURVIVE</div>
+    </section>
+
+    <section id="screen-stages" class="screen overlay-screen is-hidden" aria-label="ステージセレクト">
+      <div class="overlay-card"><div class="panel-head"><button class="panel-back" data-back="title" type="button">← BACK</button><span>SELECT MISSION</span></div><h2>STAGE SELECT</h2><p class="panel-description">解放済みのルートに挑め。</p><div id="stage-grid" class="stage-grid"></div></div>
+    </section>
+
+    <section id="screen-skins" class="screen overlay-screen is-hidden" aria-label="スキン工房">
+      <div class="overlay-card"><div class="panel-head"><button class="panel-back" data-back="title" type="button">← BACK</button><span>CUSTOMIZATION</span></div><h2>SKIN LAB</h2><p class="panel-description">リーダーの色を選ぶ。尾や装甲などの本格モデリングは次工程。</p><div class="skin-options" id="skin-options"></div><p class="panel-footnote">現在の3Dリーダーに色が反映されます。</p></div>
+    </section>
+
+    <section id="screen-settings" class="screen overlay-screen is-hidden" aria-label="設定">
+      <div class="overlay-card"><div class="panel-head"><button class="panel-back" data-back="title" type="button">← BACK</button><span>CONFIGURATION</span></div><h2>SETTINGS</h2><div class="settings-row"><span>サウンド</span><button id="btn-sound-toggle" class="btn-switch" type="button">ON</button></div><div class="settings-row"><span>画質</span><button id="btn-quality-toggle" class="btn-switch" type="button">NORMAL</button></div><div class="settings-row"><span>モーション軽減</span><button id="btn-motion-toggle" class="btn-switch" type="button">OFF</button></div></div>
+    </section>
+
+    <section id="screen-pause" class="screen overlay-screen is-hidden" aria-label="一時停止">
+      <div class="overlay-card compact-card"><div class="panel-overline">MISSION INTERRUPTED</div><h2>PAUSED</h2><div class="stack-actions"><button id="btn-resume" class="btn-primary" type="button">ゲームに戻る <span>→</span></button><button id="btn-restart" class="btn-secondary" type="button">最初からやり直す</button><button id="btn-quit" class="btn-secondary" type="button">タイトルへ戻る</button></div></div>
+    </section>
+
+    <section id="screen-result" class="screen overlay-screen is-hidden" aria-label="リザルト">
+      <div class="overlay-card compact-card result-card"><div id="result-overline" class="panel-overline">MISSION COMPLETE</div><h2 id="result-title">CLEAR</h2><p id="result-description" class="panel-description">作戦終了。</p><div class="result-metrics"><div><small>FINAL SQUAD</small><strong id="result-count">10</strong></div><div><small>RUN TIME</small><strong id="result-time">00:00</strong></div></div><div class="stack-actions"><button id="btn-result-next" class="btn-primary" type="button">次のステージ <span>→</span></button><button id="btn-result-retry" class="btn-secondary" type="button">再挑戦</button><button id="btn-result-home" class="btn-secondary" type="button">タイトルへ戻る</button></div></div>
+    </section>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
