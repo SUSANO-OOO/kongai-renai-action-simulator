@@ -1,86 +1,20 @@
 {
-  "schemaVersion": 1,
-  "status": "concept",
-  "characters": [
-    {
-      "id": 1,
-      "name": "アヤカ",
-      "originMotif": "日本",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 2,
-      "name": "ミナ",
-      "originMotif": "韓国",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 3,
-      "name": "リン",
-      "originMotif": "中国",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 4,
-      "name": "ジェシカ",
-      "originMotif": "アメリカ",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 5,
-      "name": "エミリー",
-      "originMotif": "イギリス",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 6,
-      "name": "クロエ",
-      "originMotif": "フランス",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 7,
-      "name": "ハンナ",
-      "originMotif": "ドイツ",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 8,
-      "name": "カミラ",
-      "originMotif": "ブラジル",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 9,
-      "name": "ナイラ",
-      "originMotif": "架空のアフリカ文化圏",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    },
-    {
-      "id": 10,
-      "name": "アナ",
-      "originMotif": "ロシア",
-      "ageGroup": "adult",
-      "illustrationStatus": "not_started",
-      "approval": false
-    }
-  ]
+ "schemaVersion":2,
+ "status":"design_proposals_not_approved_art",
+ "artDirection":"stylized_cg",
+ "releaseMedium":"2d_illustrations",
+ "profileDisplay":["name","appearance"],
+ "optional3d":"post_completion_only",
+ "characters":[
+  {"id":1,"name":"アヤカ","ageGroup":"adult","designAge":29,"designCue":"親しみやすい大人のミニスカコーデ","illustrationStatus":"not_started","approval":false},
+  {"id":2,"name":"ミナ","ageGroup":"adult","designAge":33,"designCue":"落ち着きと生活感のある人妻風、スレンダー","illustrationStatus":"not_started","approval":false},
+  {"id":3,"name":"リン","ageGroup":"adult","designAge":26,"designCue":"活発でシャープ、ストリート系","illustrationStatus":"not_started","approval":false},
+  {"id":4,"name":"ジェシカ","ageGroup":"adult","designAge":31,"designCue":"快活、引き締まったスポーティ系","illustrationStatus":"not_started","approval":false},
+  {"id":5,"name":"エミリー","ageGroup":"adult","designAge":39,"designCue":"余裕と華やかさのある人妻風、曲線的な体型","illustrationStatus":"not_started","approval":false},
+  {"id":6,"name":"クロエ","ageGroup":"adult","designAge":35,"designCue":"洗練されたモード、落ち着いた視線","illustrationStatus":"not_started","approval":false},
+  {"id":7,"name":"ハンナ","ageGroup":"adult","designAge":28,"designCue":"活動的で力強いシルエット","illustrationStatus":"not_started","approval":false},
+  {"id":8,"name":"カミラ","ageGroup":"adult","designAge":32,"designCue":"明るくしなやかな身のこなし","illustrationStatus":"not_started","approval":false},
+  {"id":9,"name":"ナイラ","ageGroup":"adult","designAge":42,"designCue":"堂々とした大人の人妻風、上品な衣装","illustrationStatus":"not_started","approval":false},
+  {"id":10,"name":"アナ","ageGroup":"adult","designAge":30,"designCue":"クールな表情、すっきりした体型","illustrationStatus":"not_started","approval":false}
+ ]
 }
