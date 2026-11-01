@@ -4,6 +4,19 @@
 
 > **現在の正確な状態：アート先行の企画・査定段階。** このリポジトリはスマホ縦長390×844のSVGコンペ画像12枚を閲覧できるレビューワークベンチと仕様書・素材台帳を収録しています。完成ゲーム、全11面の完成3D、最終女性キャラクター素材、音響はまだ完成していません。
 
+## 最初に見るべき画面
+
+下記は**すべて縦型の個別画面**です。高精細WebPは旧ビジュアルラフ、SVGは3レーンや勝敗の正確な構図を確認するための設計画です。いずれも完成3Dゲーム画面ではありません。
+
+<table><tr><th>タイトル</th><th>女性ステージ選択</th><th>ゲート（旧ラフ）</th><th>ゴール（旧ラフ）</th></tr><tr>
+<td><img src="docs/concept-art/raster-drafts/01_title.webp" width="170" alt="縦型タイトル"/></td>
+<td><img src="docs/concept-art/raster-drafts/02_stage_select.webp" width="170" alt="ステージ選択"/></td>
+<td><img src="docs/concept-art/raster-drafts/04_blue_red_gates.webp" width="170" alt="ゲート選択"/></td>
+<td><img src="docs/concept-art/raster-drafts/08_goal_approach.webp" width="170" alt="ゴール接近"/></td>
+</tr></table>
+
+**仕様を守った3進路案：** [青赤ゲート](docs/concept-art/04_blue_red_gates.svg) ／ **ゴールの2分岐：** [白金SUCCESS](docs/concept-art/08_clear.svg)・[紫FAILED](docs/concept-art/09_failed.svg)
+
 ## 縦型コンペをプレビュー
 
 ```sh
