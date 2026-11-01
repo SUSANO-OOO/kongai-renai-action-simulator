@@ -1,79 +1,57 @@
-> **最新版プロジェクトルール（2026-11-01）:** 全素材を先に制作→3周品質監査→制作者査定→承認後に初めて本体の本格実装。通常10ステージ＋NORMAL/HARD＋HARD全制覇でパイセンの隠し11面。初期試作コードや仮メッシュは完成品ではありません。詳しくは `AGENTS.md` / `docs/ART_FIRST_APPROVAL.md`。
-
 # 婚外恋愛アクションシミュレーター
 
-**Codename / repository:** `kongai-renai-action-simulator`  
-**Genre:** 縦型3Dクラウド・ランナー × オートシューティング × コミカルな体内SF  
-**Platform:** スマートフォン縦画面（Web/PWA first。iOS Safari / Android Chrome）。PCはマウスで検証可能。  
-**Status:** 企画・10面データ・初期WebGLプロトタイプコードを同梱。最終3Dモデルや高度な敵AIは未制作、依存パッケージ未取得につきビルド・実機プレイ未検証。
+**スマホブラウザ向け・縦型3D群集ランナー／オートシューティング／成人向け風刺コメディ**
 
-## 企画の中心
+> **現在の正確な状態：アート先行の企画・査定段階。** このリポジトリは12枚の9:16コンペ画像を閲覧できるレビューワークベンチと仕様書・素材台帳を収録しています。完成ゲーム、全11面の完成3D、最終女性キャラクター素材、音響はまだ完成していません。
 
-片手の横ドラッグだけで精子軍団を操作し、3レーンに現れる「増殖ゲート」「強化ゲート」「障害物」を選びながら自動射撃でライバル精子や体内防衛ギミックを突破する。全10ステージのゴールを目指す。少子化を題材とした**架空の風刺コメディ**であり、医学的事実や現実の出生政策を説明するゲームではない。
-
-### 絶対に守る体験
-
-1. 指を離しても前進し、移動は横ドラッグのみ。面倒なタップ連打なし。
-2. 3レーンだが操作は「3択ボタン」ではなく連続的・滑らかな横移動。ゲートや遮蔽物はレーン単位で認識できる。
-3. 精子の隊列が目に見えて増える。複数体が独立してうねり、頭部から「アクロショット」（架空の弾）を自動射出する。
-4. 途中に敵・破壊可能な肉壁・移動障害・強化ゲートがあり、進路選択にトレードオフがある。
-5. 各ステージは異なる形状、照明、敵構成、地形ギミック、ボス/フィナーレを持つ。
-6. 数字が巨大でもゲームが破綻しない。ゲーム内の**戦力値**と実際に描画する**可視ユニット数**は別管理。
-7. 2〜3分触れば基本操作が分かる。プレイ中の画面は見やすく、派手さと視認性を両立。
-
-## 世界観の整理
-
-精子は現実には血管を通って卵子へ向かうわけではない。舞台は子宮頸管・子宮・卵管などを誇張して再構成した**架空の生殖路SF**。赤〜深紅の有機的な壁は活かし、血管・血液の流路だと説明しない。精子同士の銃撃戦、掛け算ゲート、必殺技はすべてコメディ的なフィクション。
-
-## 初期技術方針
-
-- Vite + TypeScript + Three.js（初期はブラウザ版、後からPWA対応）
-- 3D空間 + DOM/CSS UI。物理エンジンを使わず、ゲームに最適化した衝突判定。
-- InstancedMeshによる大量ユニット描画。3Dモデルの制作元データは `assets/source/`、実行用GLBは `public/models/` に分離する（Codexの後工程で作成）。
-- コンテンツは `data/stages.json` を正本とし、手作り10ステージを実装する。無限ランダム生成への置き換えは禁止。
-- Node.js標準テストでステージデータを検証。CIのテスト/ビルドを定義済み。E2E・実機監査は今後追加。
-
-## 仕様書を読む順番
-
-1. [`docs/PRODUCT_VISION.md`](docs/PRODUCT_VISION.md) — 企画目的、体験の方向性
-2. [`docs/GAMEPLAY_SPEC.md`](docs/GAMEPLAY_SPEC.md) — 操作、成長、攻撃、難易度
-3. [`docs/LEVELS_10.md`](docs/LEVELS_10.md) — 10ステージの個別設計
-4. [`docs/ART_AND_MODELS.md`](docs/ART_AND_MODELS.md) — 3Dモデル、質感、VFX、演出
-5. [`docs/UI_UX.md`](docs/UI_UX.md) — 縦型UI、導線、操作性
-6. [`docs/ENGINEERING.md`](docs/ENGINEERING.md) — 実装構造、最適化、テスト
-7. [`docs/CODEX_PLAN.md`](docs/CODEX_PLAN.md) — 開発順と検収条件
-8. [`AGENTS.md`](AGENTS.md) — Codexの作業ルール
-9. [`CODEX_START_PROMPT.md`](CODEX_START_PROMPT.md) — Codexに渡す最初の指示
-10. [`docs/IMPLEMENTATION_STATUS.md`](docs/IMPLEMENTATION_STATUS.md) — 実装/検証/未完成の厳密な区別
-11. [`docs/PROJECT_SETUP.md`](docs/PROJECT_SETUP.md) — GitHub新規作成とPush
-
-## 注意
-
-- 他社ゲームのUI・モデル・テクスチャ・音声・広告映像のコピーは禁止。参考はゲームループだけ。
-- 未実装を「完成」と書かない。仮モデルは検証目的だけとし、リリース対象の完成アセットと混同しない。
-- 機械的な広告誘導や過激な性的表現は初期仕様に含めない。
-
-## 初期プロトタイプのコードと起動方法
-
-- `src/game/Render.ts`: Three.jsで実際の3D回廊、精子リーダー、インスタンス群体、敵とゲートと障害物を手続き生成する**仮造形**。
-- `src/game/Game.ts`: 10面の走行進行、自由横移動、倍率/強化、集約戦闘、勝敗。
-- `src/main.ts` / `src/styles.css`: タイトル、10面選択、HUD、ポーズ、スキン色変更、結果、設定画面。
-- `data/stages.json`: 10面・128イベントの設計済みデータ。
+## 縦型コンペをプレビュー
 
 ```sh
 npm install
-npm test
 npm run dev
 ```
 
-初期プレイテストの推奨ブラウザは縦向きのiOS Safari / Android Chrome。**このパッケージを生成した環境では npm のネットワーク接続ができず、依存ライブラリのインストール・ビルド・プレイテストは実施できていません。** JavaScript/TypeScriptの構文検査とデータ検査は別途実施。未実装・未検証部分はCodexが優先して解消してください。
+ブラウザの画面で、タイトル→ステージ選択→開始→ゲート→戦闘→ボス→ゴール→SUCCESS/FAILED→リザルト→スキン→SECRETの順に、各画面のコンペ画像を確認できます。画像は `docs/concept-art/` に編集可能なSVGとして保管し、Viteで公開用にコピーする `public/concept-art/` にも同じ内容を置いています。
 
-## GitHub作成について
+## 変更不可のルール
 
-このパッケージは**ローカルに作った新規プロジェクト用ファイル**であり、GitHub上の新規リポジトリを自動で作ったものではありません。既存リポジトリは変更していません。GitHub上に新規作成する手順は [`docs/PROJECT_SETUP.md`](docs/PROJECT_SETUP.md)。公開設定はユーザーの許可によりPublicを想定。ユーザー本人のGit設定など個人情報はPush前に確認が必要です。
+- **3レーンの見た目＋左右自由X移動**（2レーンではない）
+- 初期人数は全ステージ **必ず1体**
+- 青ゲートで増員（×、+）、赤ゲートで減員（−、÷）
+- 0体で即敗北、ゴールに100体以上生存で成功
+- 同じ3Dゴールで100体以上なら白金色の発光、99体以下なら紫の吸引渦
+- 通常10ステージ（成人女性10人）＋HARD10面クリアで解放されるパイセン面
+- コイン/3スキン/XP/15ランクの称号。恒久的戦闘性能ブーストなし
+- **完成モデル・UI・VFX・BGM/SEを先に全制作し、3周検査→本人査定→承認後に本格実装**
 
-## 3つの弱点を開発前に潰すための受入契約
+詳細：[`AGENTS.md`](AGENTS.md) ／ [`CODEX_START_PROMPT.md`](CODEX_START_PROMPT.md) ／ [`docs/THREE_LANE_CONTROL.md`](docs/THREE_LANE_CONTROL.md) ／ [`docs/GOAL_AND_GATE_DIRECTOR_SPEC.md`](docs/GOAL_AND_GATE_DIRECTOR_SPEC.md) ／ [`docs/ART_FIRST_APPROVAL.md`](docs/ART_FIRST_APPROVAL.md)
 
-**①単調さ・②素材品質の崩れ・③ゴールの弱さ**は、`docs/THREE_WEAKNESSES_PREVENTION.md` のW1/W2/W3で事前対策、検収証拠、未達の扱いまで決めている。`docs/LEVEL_FLOW_ACCEPTANCE.md` は「全モード開始1体、ゴール100体以上」というルールを検査可能にする。`docs/DECISIONS_AND_OPEN_QUESTIONS.md` はユーザー決定事項と制作側の仮案を分離している。
+## コンペ画面一覧
 
-現在のアセット台帳は**130件の必須資産を未制作として登録**した状態。3Dモデル・UI・サウンドが完成しているわけではない。CIでテストが通ってもゲームの面白さ、制作物の完成、実機動作まで保証されない。
+| No. | 画面 | ファイル |
+|---:|---|---|
+| 1 | タイトル | [01_title.svg](docs/concept-art/01_title.svg) |
+| 2 | ステージ選択 | [02_stage_select.svg](docs/concept-art/02_stage_select.svg) |
+| 3 | 1体スタート | [03_one_start.svg](docs/concept-art/03_one_start.svg) |
+| 4 | **青赤の3レーン分岐** | [04_blue_red_gates.svg](docs/concept-art/04_blue_red_gates.svg) |
+| 5 | 敵との戦闘 | [05_enemy_wave.svg](docs/concept-art/05_enemy_wave.svg) |
+| 6 | ボス戦 | [06_boss.svg](docs/concept-art/06_boss.svg) |
+| 7 | ゴール接近 | [07_goal.svg](docs/concept-art/07_goal.svg) |
+| 8 | 白金色SUCCESS | [08_clear.svg](docs/concept-art/08_clear.svg) |
+| 9 | 紫色FAILED | [09_failed.svg](docs/concept-art/09_failed.svg) |
+| 10 | リザルト | [10_result.svg](docs/concept-art/10_result.svg) |
+| 11 | スキン | [11_skins.svg](docs/concept-art/11_skins.svg) |
+| 12 | 秘密パイセン | [12_secret.svg](docs/concept-art/12_secret.svg) |
+
+## 参照素材
+
+[`references/paisen/`](references/paisen/) は既存の本人制作ゲーム `SUSANO-OOO/Zombieee` から、読み取りのみで取り込んだ参照画像3点です。**原作側のリポジトリは変更していません。** パイセンの新作内での使用は査定後に決定します。
+
+## 検査
+
+```sh
+npm test
+npm run build
+```
+
+`npm test` はゲーム完成テストではなく、仕様/データ/コンペ画像の整合性検査です。スマホ実機のプレイ確認と3Dモデル査定は別途必須です。
