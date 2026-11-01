@@ -12,8 +12,8 @@ const SCREENS:Screen[]=[
  {id:'08_clear',title:'SUCCESS / 白金色',purpose:'100体以上で軍団が光に包まれ勝利',checks:['100体以上','白金色の発光','3Dゴールとカメラを維持']},
  {id:'09_failed',title:'FAILED / 紫の吸引',purpose:'99体以下でゲートが紫化、吸引され敗北',checks:['1〜99体','紫の吸引渦','同じ位置の3Dゴール']},
  {id:'10_result',title:'リザルト／報酬',purpose:'クリア数・コイン・経験値の表示',checks:['成績と報酬','次のステージ','リトライ']},
- {id:'11_skins',title:'3種の着せ替え',purpose:'コインで外見を変える楽しみ',checks:['3スキン','価格と装備','性能差はない']},
- {id:'12_secret',title:'秘密のパイセン面',purpose:'10面のHARDクリア後に解放される特殊面',checks:['HARD 10/10','原作パイセンの参照','隠し面の別世界観']},
+ {id:'11_skins',title:'初期＋追加3種の着せ替え',purpose:'コインで外見を変える楽しみ',checks:['初期外見＋追加3種類＝合計4種類','ゲーム内コインの価格と装備','性能差はない','旧ラフは3外見のため作り直し対象']},
+ {id:'12_secret',title:'秘密のパイセン面',purpose:'10面のHARDクリア後に解放される特殊面',checks:['HARD 10/10','HARD専用・NORMALなし','忠実なidentity-r2を参照','隠し面の別世界観']},
 ];
 const RASTER_BY_SCREEN:Record<string,string>={'01_title':'01_title.webp','02_stage_select':'02_stage_select.webp','03_one_start':'03_one_unit_start.webp','04_blue_red_gates':'04_blue_red_gates.webp','05_enemy_wave':'05_enemies_and_damage.webp','06_boss':'07_boss_battle.webp','07_goal':'08_goal_approach.webp','08_clear':'09_clear_screen.webp','09_failed':'10_failed_screen.webp'};
 let viewMode:'layout'|'raster'='layout';
@@ -23,20 +23,20 @@ let startX=0;
 app.innerHTML=`<div class="app-shell">
  <header class="masthead">
   <div class="brand-mark">KR<span>AS</span></div>
-  <div class="brand-copy"><strong>婚外恋愛アクションシミュレーター</strong><span>PRE-PRODUCTION · ART REVIEW</span></div>
+  <div class="brand-copy"><strong>婚外恋愛アクションシミュレーター</strong><span>PAO GAMES · PRE-PRODUCTION</span></div>
   <span class="draft">未承認コンペ</span>
  </header>
  <main class="workspace">
   <section class="preview-column" aria-label="縦型画面プレビュー">
    <div class="preview-top"><span class="eyebrow">PORTRAIT SCREEN PREVIEW</span><strong id="step">01 / 12</strong></div>
-   <div class="mode-picker"><button id="mode-layout" class="active" type="button">正確な構図（SVG）</button><button id="mode-raster" type="button">高精細ラフ（WebP）</button></div><div class="phone-stage" id="phone-stage"><img id="screen-image" alt="選択中の縦画面コンペ" loading="eager"/></div>
+   <div class="mode-picker"><button id="mode-layout" class="active" type="button">旧構図ラフ（SVG）</button><button id="mode-raster" type="button">旧ビジュアルラフ（WebP）</button></div><div class="phone-stage" id="phone-stage"><img id="screen-image" alt="選択中の縦画面コンペ" loading="eager"/></div>
    <div class="preview-controls"><button id="prev" type="button">← 前の画面</button><button id="next" type="button">次の画面 →</button></div>
   </section>
   <aside class="spec-column">
    <span class="eyebrow">DESIGN REVIEW / FIRST DRAFT</span>
    <h1 id="screen-title"></h1>
    <p id="screen-purpose"></p>
-   <div class="notice"><b>これは完成ゲームではありません。</b><p>UI構図を確認するためのSVGコンペ画像です。最終3Dモデル・アニメ・音響・女性立ち絵は、全素材制作と本人査定を経て採用します。</p></div>
+   <div class="notice"><b>これは完成ゲームではありません。</b><p>SVG・WebPとも未承認の旧ラフです。国籍表記・外見数・ゴール表現などに現行仕様との差があります。右の検収項目と最新仕様を優先し、完成素材として転用しないでください。</p></div>
    <h2>この画面の検収項目</h2><ul id="checks"></ul>
    <h2>画面一覧</h2><nav id="thumbnail-list" aria-label="各画面を選択"></nav>
    <div class="milestone"><b>必須ルール</b><p>全11ステージで1体開始。青ゲートは増員、赤ゲートは減員。3経路の見た目に対して移動は自由。ゴール時100体以上で成功。</p></div>
@@ -54,7 +54,7 @@ for(let i=0;i<SCREENS.length;i++){
 }
 function show(i:number){
  selected=(i+SCREENS.length)%SCREENS.length;const s=SCREENS[selected];
- const raster=RASTER_BY_SCREEN[s.id];const useRaster=viewMode==="raster"&&!!raster;img.src=useRaster?`./concept-art/raster-drafts/${raster}`:`./concept-art/${s.id}.svg`;img.style.objectFit=useRaster?"contain":"fill";img.alt=`${s.title} / ${useRaster?"旧ビジュアルラフ（誤記や不整合あり）":"仕様優先の構図案"}・未承認`;
+ const raster=RASTER_BY_SCREEN[s.id];const useRaster=viewMode==='raster'&&!!raster;img.src=useRaster?`./concept-art/raster-drafts/${raster}`:`./concept-art/${s.id}.svg`;img.style.objectFit='contain';img.alt=`${s.title} / ${useRaster?'旧ビジュアルラフ（誤記や不整合あり）':'旧構図ラフ（現行仕様との差あり）'}・未承認`;
  $('step').textContent=`${String(selected+1).padStart(2,'0')} / ${SCREENS.length}`;
  $('screen-title').textContent=s.title;$('screen-purpose').textContent=s.purpose;
  $('checks').replaceChildren(...s.checks.map(c=>{const li=document.createElement('li');li.textContent=c;return li;}));

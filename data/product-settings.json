@@ -8,7 +8,7 @@
  "distribution":{"initialPrice":0,"currency":"JPY","initialAds":false,"initialMicrotransactions":false,"initialExternalAnalytics":false,"futureAds":"desired_not_implemented","advisory":{"location":"title_screen","presentation":"small_readable","repeatedModal":false}},
  "save":{"mode":"device_local","cloudSync":false,"accountRequired":false},
  "sourceLicense":"MIT",
- "paidExternalResources":{"authorized":false,"budget":null},
+ "paidExternalResources":{"authorized":false,"budget":0,"currency":"JPY","policy":"hard_zero_incremental_spend","existingEntitlementsOnly":true,"paidApiCalls":false,"overageBilling":false,"automaticTopUps":false,"newSubscriptions":false,"paidAssets":false,"autoRenewingTrials":false,"whenQuotaExhausted":"use_verified_free_alternative_or_stop_affected_task","whenCostUnknown":"do_not_execute","reopenBudgetQuestion":false,"decisionSource":"docs/decisions/2026-11-01-zero-spend.md"},
  "github":{"autonomousLowRiskMerge":true,"testsAndEvidenceRequired":true,"initialProductionRelease":"awaiting_explicit_authorization"},
- "privacy":{"historyRewriteAuthorized":true,"scope":"SUSANO-OOO/kongai-renai-action-simulator","executionStatus":"pending"}
+ "privacy":{"historyRewriteAuthorized":true,"scope":"SUSANO-OOO/kongai-renai-action-simulator","executionStatus":"published_refs_rewritten","evidence":"docs/audits/2026-11-01-privacy-verification.json"}
 }

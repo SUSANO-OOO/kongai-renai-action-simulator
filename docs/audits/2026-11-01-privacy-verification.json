@@ -1,0 +1,14 @@
+{
+ "repository":"SUSANO-OOO/kongai-renai-action-simulator",
+ "status":"published_refs_rewritten",
+ "commitsInspected":28,
+ "ownerAddressesMatched":1,
+ "treeContentsUnchanged":true,
+ "remoteRefsVerified":true,
+ "serverPrRefsAndCachesErased":false,
+ "encryptedBackupSha256":"b1867331c06254af8a6de3348694715ba81e3bb0047c1bc91e547bf52e582452",
+ "commitsRewritten":28,
+ "refsRewritten":3,
+ "main":"86b5be6563d5ceba4a79660c2ac5f45476944b42",
+ "signedCommitHeadersRemovedWhenInvalidated":true
+}

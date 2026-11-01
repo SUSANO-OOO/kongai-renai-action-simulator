@@ -1,0 +1,17 @@
+import {readFileSync,existsSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
+import {validateAssets} from './lib/asset-contract.mjs';
+import {validateBudget} from './lib/budget-contract.mjs';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const text=p=>readFileSync(resolve(root,p),'utf8');
+const read=p=>JSON.parse(text(p));
+const manifest=read('data/asset-manifest.json'),state=read('data/project-state.json');
+const issues=validateBudget(read('data/product-settings.json'),state,text('.github/workflows/ci.yml'));
+issues.push(...validateAssets(manifest,root,read('data/asset-requirements.json').requiredIds));
+if(!existsSync(resolve(root,'package-lock.json')))issues.push('Dependency lockfile is missing');
+const pending=manifest.requiredAssets.filter(a=>a.required&&a.status!=='approved').map(a=>a.id);
+if(pending.length)issues.push('Required assets not approved: '+pending.length);
+if(manifest.approvedForProduction!==true)issues.push('All-assets producer review is pending');
+console.log(JSON.stringify({status:issues.length?'NOT_READY':'PREREQUISITES_PRESENT',handoffScope:'production_implementation_after_all_assets_review',requiredAssets:manifest.requiredAssets.filter(a=>a.required).length,pendingAssetIds:pending,issues,notice:'A clean build or documentation does not replace finished assets, actual playback or producer approval.'},null,2));
+process.exitCode=issues.length?2:0;

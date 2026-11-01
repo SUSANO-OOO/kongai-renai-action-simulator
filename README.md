@@ -1,39 +1,39 @@
 # 婚外恋愛アクションシミュレーター
 ## PAO GAMES（パオゲームズ）
 
-スマホ縦型の3D群集ランナー＋自動射撃。1体から増え、3つの進路を自由に動き、群れを守り100体以上でゴールする。
+スマホ縦型の3D群集ランナー＋自動射撃。1体から増え、3進路を自由に動き、群れを守り100体以上でゴールする。
 
-**現在は素材先行の制作準備段階。rootのアプリはコンペ閲覧サイトで、完成ゲームではありません。** 全素材の本人査定と製品QAはまだです。
+**現在は素材先行の制作準備。実行対象は旧コンペ閲覧サイトで、完成ゲームではありません。全素材と本人査定は未完了です。**
 
-## Codexの入口
-[AGENTS](AGENTS.md) → [HANDOFF](docs/HANDOFF.md) → [本人回答](docs/decisions/2026-11-01-owner-answers.md) → [製品契約](docs/PRODUCT_CONTRACT.md)。最初に渡す文章は [CODEX_START_PROMPT](CODEX_START_PROMPT.md)。
-制作方法は任せ、必要な成果・検証・本人査定の境界を守ります。検査済み低リスクPRの自律main統合は本人から許可されています。
+## 入口・費用
+[AGENTS](AGENTS.md) → [HANDOFF](docs/HANDOFF.md) → [追加支出0円](docs/decisions/2026-11-01-zero-spend.md) → [本人回答](docs/decisions/2026-11-01-owner-answers.md) → [製品契約](docs/PRODUCT_CONTRACT.md)。[CODEX_START_PROMPT](CODEX_START_PROMPT.md)は素材査定後の本編引き渡し用。
+**追加支出は0円。既存枠と確認済み無料手段だけ。有料API・購入・超過課金・自動チャージ・新規契約は禁止。** [費用方針](docs/ZERO_SPEND_POLICY.md)。低リスクPRは検査済みなら自律main統合可。
 
-## 2026-11-01 確定した仕様
-- 人物：スタイライズCG寄りの成人女性2D立ち絵10人。人妻感のある人物も複数。名前と見た目が主で、国籍/文化紹介/台詞/恋愛分岐なし。人物3Dは完成後の任意候補。
-- 通常10面は順次解放。解放済み面はNORMAL/HARDを初めから選べます。通常HARD全制覇でHARD専用パイセン面。
-- 3つの視覚進路＋連続左右移動、全ラン1体。青増員/赤減員/一時強化。同じ3Dゴールで100以上は白金、1〜99は紫吸引。
-- 初期外見＋追加3＝計4スキン。記録/レベル/称号。性能の永久強化なし。
-- 負けたランで拾ったコインは持ち帰れません。既存財布を減らさず、成功時だけ一度確定します。
-- 初版無料、端末内保存。広告は将来候補。開始画面の注意は小さく読みやすく。
+## 確定仕様
+- CG寄りの架空成人女性2D10人、人妻感も複数。名前/見た目が主役、国籍/文化説明/台詞/恋愛分岐なし。人物3Dは完成後の任意候補。
+- 通常10面順次解放。解放済み面のNORMAL/HARDは初めから選択。通常HARD全制覇でHARD専用パイセン。
+- 3視覚進路＋連続左右移動、全ラン1体。青/赤/一時強化。同じ3Dゴールで100以上は白金、1〜99は紫吸引。
+- 初期＋追加3＝計4外見。記録/レベル/称号、永久戦闘強化なし。敗北時の回収コイン0、既存財布は保持。
+- 初版無料、端末内保存。広告は将来候補。注意はタイトルに小さく読みやすく。
 
 ## 実行と検査
+Node版は.nvmrc、依存はpackage-lock.json。
 ```sh
-npm install
+npm ci
 npm run dev
 npm test
 npm run build
+npm run check:budget
+npm run check:handoff
 npm run check:assets
 npm run check:release
 ```
-最後の2コマンドは未制作・未承認ならNOT_READYを返す設計です。通常テストが通ることと、ゲームの完成・公開許可は別です。
+後ろ3つは未制作/未承認ならNOT_READYを返します。通常テスト/ビルドの成功と、全素材完成/本人承認/公開許可は別です。
 
-## コンペ・参考の扱い
-[SVG構図ラフ](docs/concept-art/) と [旧WebP](docs/concept-art/raster-drafts/) は**旧参考・未承認**。国籍表記、旧3外見、2進路に見える構図、人物の顔で成功失敗を代用する画面は現行仕様ではありません。作り直し対象の指示は各画面の検収要件を優先します。
-SVG390×844は縦長ですが9:16ではなく、900×1600が9:16です。最終UIは両方に自然に適応します。
-[パイセン参照](references/paisen/) は原作の現在のr2出力と内容ハッシュで照合します。本作利用権は本人確認済み、新作美術の完成承認とは別。原作Zombieeeへ変更しません。
-[旧試作](prototype/) は参考保存で完成ゲームではありません。
+## 制作基準・旧参考
+[共通規格](docs/ASSET_TECHNICAL_CONTRACT.md)、[21面・難度の判断案](data/stage-design-briefs.json)、[素材台帳](data/asset-manifest.json)。基準や案を完成素材と数えません。
+SVG構図とWebPはともに旧未承認ラフ。国籍表記・3外見・2進路・顔ポスター勝敗は現行仕様ではありません。390×844は9:16ではなく、900×1600が9:16。最終UIは両方へ自然に対応します。
+パイセンは[忠実なr2参照](references/paisen/)を優先。本作利用権と新作完成承認は別。原作Zombieeeは読み取り専用。
 
-## ライセンス・運用
-ソースコードは[MIT](LICENSE)、画像/モデル/音/肖像/フォント/ブランド等は[別権利](ASSET_RIGHTS.md)。作者名義はPAO GAMESです。
-[回答と残件](docs/DECISIONS_AND_OPEN_QUESTIONS.md)、[WORK_LOG](docs/WORK_LOG.md)、[素材承認](docs/ART_FIRST_APPROVAL.md)、[製品公開条件](docs/RELEASE_ACCEPTANCE.md)、[個人メール履歴修正](ops/privacy/README.md)。
+## 権利・状態
+ソース[MIT](LICENSE)、画像/モデル/音/肖像/フォント/ブランドは[別権利](ASSET_RIGHTS.md)。[回答と残件](docs/DECISIONS_AND_OPEN_QUESTIONS.md)、[WORK_LOG](docs/WORK_LOG.md)、[素材査定](docs/ART_FIRST_APPROVAL.md)、[公開条件](docs/RELEASE_ACCEPTANCE.md)。

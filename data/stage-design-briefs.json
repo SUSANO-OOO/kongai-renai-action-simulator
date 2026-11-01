@@ -1,0 +1,18 @@
+{
+ "schemaVersion":1,
+ "status":"design_proposals_not_playtested",
+ "basis":"docs/decisions/2026-11-01-owner-answers.md",
+ "stages":[
+  {"id":1,"workingTitle":"導入回廊","playerDecision":"青増員と安全な経路を理解する","normal":"最初の増員後に回収コインの寄り道を選ぶ","hard":"増員か回収かの後方配置を変える","visualBrief":"連続した明るい輪郭・低い側壁","guardrail":"初期1体を不可避に失わせない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":2,"workingTitle":"三叉の回廊","playerDecision":"倍率だけでなく出口の混雑を読む","normal":"大きな増員の先には敵、小さな増員の先は安全","hard":"ゲート直後ではなく十分な予告距離の先に移動敵","visualBrief":"三つの道筋が遠景まで読めるアーチ","guardrail":"最大倍率が毎回唯一の正解にしない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":3,"workingTitle":"粘液の水路","playerDecision":"減速と安全な横移動を判断する","normal":"粘液の外を通る迂回とコイン回収を選ぶ","hard":"粘液と横移動する障害の周期をずらす","visualBrief":"流動する底面と乾いた通路の境界","guardrail":"粘液で操作を無告知に反転させない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":4,"workingTitle":"群集の境界","playerDecision":"自動射撃の撃破速度を見積もる","normal":"薄い敵列を突破して増員へ接続","hard":"二つの敵群の間を移動して損耗を抑える","visualBrief":"大群と背景を明度で分離","guardrail":"敵の物量だけで画面を埋めない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":5,"workingTitle":"装甲の関門","playerDecision":"予告を避けながら攻撃機会を作る","normal":"装甲ボスの予告帯から退避し回復中に攻撃","hard":"予告の方向を組み合わせて単純往復を崩す","visualBrief":"装甲ボスが大きく読める広場","guardrail":"HP倍率だけを難化の理由にしない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":6,"workingTitle":"開閉の回廊","playerDecision":"開閉周期を読んで安全側へ移る","normal":"閉まる壁の前に移動する","hard":"二組の壁の位相をずらし増員経路を選ばせる","visualBrief":"遠くから開閉方向が分かる支柱","guardrail":"速度を考慮しない不可避の閉鎖を作らない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":7,"workingTitle":"免疫の広間","playerDecision":"攻撃予告と増員を同時に見る","normal":"免疫ボスの広い予告を避ける","hard":"警告とゲートの組合せに別の安全解を用意","visualBrief":"予告帯を背景発光と混同させない","guardrail":"全経路を同時に塞がない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":8,"workingTitle":"脈動の水路","playerDecision":"変速後の分岐距離を把握する","normal":"予告付きの加速/減速で進路を選ぶ","hard":"変速後に異なる判断を置く","visualBrief":"変速手前の反復する光と流れ","guardrail":"変速の瞬間に入力感度を変えない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":9,"workingTitle":"複合の関門","playerDecision":"増員・障害・敵の順序を読む","normal":"既習の二つの判断を続けて解く","hard":"三要素を重ねず順に組み合わせる","visualBrief":"三段階の空間形状と見せ場","guardrail":"学習していない即死を初見で要求しない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":10,"workingTitle":"最終回廊","playerDecision":"損耗を抑え100体を残す","normal":"複合区画から最終ボスへつなぐ","hard":"違う避け順とゲート選択の複数解を検証","visualBrief":"遠景にゴールを見せ最終ボスを分離","guardrail":"最後だけ説明のない新ルールにしない","modes":["normal","hard"],"playtestEvidence":null},
+  {"id":11,"workingTitle":"パイセン特別コース","playerDecision":"全HARDの知識を応用する","normal":null,"hard":"既習要素を別順序で組み合わせる専用面","visualBrief":"忠実なパイセン参照と独自の架空コース","guardrail":"解剖学的舞台を未指定のまま確定しない","modes":["hard"],"playtestEvidence":null}
+ ]
+}
