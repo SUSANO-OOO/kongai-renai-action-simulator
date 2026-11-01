@@ -15,7 +15,7 @@ const SCREENS:Screen[]=[
  {id:'11_skins',title:'3種の着せ替え',purpose:'コインで外見を変える楽しみ',checks:['3スキン','価格と装備','性能差はない']},
  {id:'12_secret',title:'秘密のパイセン面',purpose:'10面のHARDクリア後に解放される特殊面',checks:['HARD 10/10','原作パイセンの参照','隠し面の別世界観']},
 ];
-const RASTER_BY_SCREEN:Record<string,string>={01_title:'01_title.webp',02_stage_select:'02_stage_select.webp',03_one_start:'03_one_unit_start.webp',04_blue_red_gates:'04_blue_red_gates.webp',05_enemy_wave:'05_enemies_and_damage.webp',06_boss:'07_boss_battle.webp',07_goal:'08_goal_approach.webp',08_clear:'09_clear_screen.webp',09_failed:'10_failed_screen.webp'};
+const RASTER_BY_SCREEN:Record<string,string>={'01_title':'01_title.webp','02_stage_select':'02_stage_select.webp','03_one_start':'03_one_unit_start.webp','04_blue_red_gates':'04_blue_red_gates.webp','05_enemy_wave':'05_enemies_and_damage.webp','06_boss':'07_boss_battle.webp','07_goal':'08_goal_approach.webp','08_clear':'09_clear_screen.webp','09_failed':'10_failed_screen.webp'};
 let viewMode:'layout'|'raster'='layout';
 const app=document.querySelector<HTMLElement>('#app')||document.body;
 let selected=0;
