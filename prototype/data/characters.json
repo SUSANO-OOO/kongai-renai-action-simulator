@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "styleKey": "premium_handpainted_neo_noir",
+  "characters": [
+    {
+      "id": "heroine01",
+      "stageId": 1,
+      "name": "九条 ルナ",
+      "age": 27,
+      "background": "日本",
+      "adult": true,
+      "visualBrief": "スモーキーブラックのボブ、ワインレッドのサテンドレス、切れ長の瞳",
+      "expressionBrief": "余裕ある微笑みと小悪魔的な挑発",
+      "palette": "ボルドー／黒／シャンパン",
+      "stageTitle": "始動の回廊",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine01/portrait_master.psd",
+        "public/art/characters/heroine01/portrait.webp",
+        "public/art/characters/heroine01/fullbody.webp",
+        "assets/source/characters/heroine01/character.blend",
+        "public/models/characters/heroine01.glb",
+        "public/art/characters/heroine01/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine02",
+      "stageId": 2,
+      "name": "エマ・リード",
+      "age": 29,
+      "background": "イギリス",
+      "adult": true,
+      "visualBrief": "柔らかな栗色ウェーブ、アイボリーのテーラードドレス、琥珀色アクセント",
+      "expressionBrief": "知的でクール、微笑むと親密",
+      "palette": "アイボリー／アンバー／深紅",
+      "stageTitle": "三叉の分岐",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine02/portrait_master.psd",
+        "public/art/characters/heroine02/portrait.webp",
+        "public/art/characters/heroine02/fullbody.webp",
+        "assets/source/characters/heroine02/character.blend",
+        "public/models/characters/heroine02.glb",
+        "public/art/characters/heroine02/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine03",
+      "stageId": 3,
+      "name": "リン・シャオ",
+      "age": 28,
+      "background": "台湾",
+      "adult": true,
+      "visualBrief": "艶のある黒髪ロング、深緑のドレープ衣装、端正な横顔",
+      "expressionBrief": "しなやかで勝負強い、静かな自信",
+      "palette": "翡翠／チャコール／金",
+      "stageTitle": "粘液の迷宮",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine03/portrait_master.psd",
+        "public/art/characters/heroine03/portrait.webp",
+        "public/art/characters/heroine03/fullbody.webp",
+        "assets/source/characters/heroine03/character.blend",
+        "public/models/characters/heroine03.glb",
+        "public/art/characters/heroine03/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine04",
+      "stageId": 4,
+      "name": "ソフィア・ロッシ",
+      "age": 32,
+      "background": "イタリア",
+      "adult": true,
+      "visualBrief": "濃茶の豊かなカール、シックな黒のオフショルダードレス、ゴールドピアス",
+      "expressionBrief": "情熱的だが品のある表情",
+      "palette": "ブラック／バーントオレンジ／金",
+      "stageTitle": "赤い交差点",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine04/portrait_master.psd",
+        "public/art/characters/heroine04/portrait.webp",
+        "public/art/characters/heroine04/fullbody.webp",
+        "assets/source/characters/heroine04/character.blend",
+        "public/models/characters/heroine04.glb",
+        "public/art/characters/heroine04/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine05",
+      "stageId": 5,
+      "name": "アイシャ・ディオプ",
+      "age": 30,
+      "background": "セネガル",
+      "adult": true,
+      "visualBrief": "深い褐色肌、編み込みアップ、群青のアシンメトリードレス",
+      "expressionBrief": "堂々とした視線、鋭いユーモア",
+      "palette": "群青／カッパー／紫",
+      "stageTitle": "残留軍団",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine05/portrait_master.psd",
+        "public/art/characters/heroine05/portrait.webp",
+        "public/art/characters/heroine05/fullbody.webp",
+        "assets/source/characters/heroine05/character.blend",
+        "public/models/characters/heroine05.glb",
+        "public/art/characters/heroine05/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine06",
+      "stageId": 6,
+      "name": "カミラ・ロハス",
+      "age": 28,
+      "background": "メキシコ",
+      "adult": true,
+      "visualBrief": "ダークブラウンのボリュームヘア、赤茶のジャケットと細身パンツ",
+      "expressionBrief": "大胆で親しみやすい笑顔",
+      "palette": "テラコッタ／銅／赤",
+      "stageTitle": "脈動回廊",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine06/portrait_master.psd",
+        "public/art/characters/heroine06/portrait.webp",
+        "public/art/characters/heroine06/fullbody.webp",
+        "assets/source/characters/heroine06/character.blend",
+        "public/models/characters/heroine06.glb",
+        "public/art/characters/heroine06/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine07",
+      "stageId": 7,
+      "name": "アニカ・シャー",
+      "age": 33,
+      "background": "インド",
+      "adult": true,
+      "visualBrief": "黒髪の長い編み込み、深紫のモダンなイブニングドレス",
+      "expressionBrief": "穏やかな表情の奥に強い意志",
+      "palette": "紫／オールドゴールド／ピンク",
+      "stageTitle": "免疫の庭",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine07/portrait_master.psd",
+        "public/art/characters/heroine07/portrait.webp",
+        "public/art/characters/heroine07/fullbody.webp",
+        "assets/source/characters/heroine07/character.blend",
+        "public/models/characters/heroine07.glb",
+        "public/art/characters/heroine07/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine08",
+      "stageId": 8,
+      "name": "ナディア・コヴァレンコ",
+      "age": 31,
+      "background": "ウクライナ",
+      "adult": true,
+      "visualBrief": "アッシュブロンドのショート、ネイビーのシャープなスーツドレス",
+      "expressionBrief": "無表情に見えて皮肉屋",
+      "palette": "紺／シルバー／深紫",
+      "stageTitle": "逆流の渦",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine08/portrait_master.psd",
+        "public/art/characters/heroine08/portrait.webp",
+        "public/art/characters/heroine08/fullbody.webp",
+        "assets/source/characters/heroine08/character.blend",
+        "public/models/characters/heroine08.glb",
+        "public/art/characters/heroine08/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine09",
+      "stageId": 9,
+      "name": "サミラ・ベナリ",
+      "age": 34,
+      "background": "モロッコ",
+      "adult": true,
+      "visualBrief": "焦げ茶のロングカール、深緑のベルベットドレス、控えめな金細工",
+      "expressionBrief": "落ち着いた色気と駆け引きの巧さ",
+      "palette": "深緑／ゴールド／赤紫",
+      "stageTitle": "三重封鎖",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine09/portrait_master.psd",
+        "public/art/characters/heroine09/portrait.webp",
+        "public/art/characters/heroine09/fullbody.webp",
+        "assets/source/characters/heroine09/character.blend",
+        "public/models/characters/heroine09.glb",
+        "public/art/characters/heroine09/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    },
+    {
+      "id": "heroine10",
+      "stageId": 10,
+      "name": "ヴィクトリア・キング",
+      "age": 36,
+      "background": "アメリカ",
+      "adult": true,
+      "visualBrief": "プラチナブロンドのボブ、黒と深紅のハイファッション",
+      "expressionBrief": "ラスボス級の貫禄を持つ堂々とした微笑み",
+      "palette": "漆黒／白金／濃紅",
+      "stageTitle": "最終侵入",
+      "visualStyle": "same unified premium hand-painted semi-realistic game illustration; mature adult glamour without nudity",
+      "requiredDeliverables": [
+        "assets/source/characters/heroine10/portrait_master.psd",
+        "public/art/characters/heroine10/portrait.webp",
+        "public/art/characters/heroine10/fullbody.webp",
+        "assets/source/characters/heroine10/character.blend",
+        "public/models/characters/heroine10.glb",
+        "public/art/characters/heroine10/stage-card.webp"
+      ],
+      "status": "planned_not_created"
+    }
+  ]
+}

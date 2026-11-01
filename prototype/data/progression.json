@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "modeRules": {
+    "normal": "available_in_story_order",
+    "hard": "all_10_normal_cleared",
+    "secret": "all_10_hard_cleared",
+    "normalStageOrder": "sequential_unlock_by_clear",
+    "modeBaptismNotes": "HARD unlock after all 10 NORMAL clears is a provisional game-design decision; confirm at user review"
+  },
+  "missionGoal": {
+    "main": {
+      "minSurvivors": 100,
+      "goal": "finish_with_100_or_more_units",
+      "startSurvivors": 1,
+      "lossAtZero": true,
+      "failBelow100AtFinish": true,
+      "extraMilestones": [
+        100,
+        1000,
+        10000
+      ],
+      "milestonesAreCosmeticOnly": true
+    },
+    "secret": {
+      "minSurvivors": 100,
+      "goal": "reach_paisen_arcade_terminal_not_fertilization",
+      "startSurvivors": 1
+    }
+  },
+  "userProgression": {
+    "name": "精子くん",
+    "levelDoesNotIncreaseCombatPower": true,
+    "normalClearXp": 100,
+    "hardClearXp": 165,
+    "secretClearXp": 300,
+    "titleLevels": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10,
+      14,
+      18,
+      23,
+      29,
+      36,
+      44,
+      53,
+      63,
+      75
+    ],
+    "titles": [
+      "まだ名もなき一匹",
+      "尾びれの新兵",
+      "逆境スイマー",
+      "倍率の開拓者",
+      "サバイバル精子",
+      "スパルタ精子",
+      "戦場の泳ぎ手",
+      "不屈の残存者",
+      "深紅の突破者",
+      "ナイトメア精子",
+      "粘膜の征服者",
+      "伝説の増殖者",
+      "無限群体の指揮官",
+      "絶対生存者",
+      "ラスト・ランナー"
+    ],
+    "titlesSelectableAfterUnlock": true,
+    "repeatClearXpFactor": 0.25
+  },
+  "cosmetics": {
+    "currency": "COIN",
+    "coinDroprateNormalEnemy": 0.12,
+    "coinDropAmount": [
+      1,
+      3
+    ],
+    "bossCoinDropGuaranteed": true,
+    "coinsOnlyForCosmetics": true,
+    "skins": [
+      {
+        "id": "teal",
+        "name": "オリジナル精子",
+        "cost": 0,
+        "look": "青緑の半透明膜と滑らかな鞭毛",
+        "status": "planned_not_final"
+      },
+      {
+        "id": "violet",
+        "name": "スパルタ精子",
+        "cost": 120,
+        "look": "紫の装甲リング、鋭い目元",
+        "status": "planned_not_final"
+      },
+      {
+        "id": "gold",
+        "name": "ナイトメア精子",
+        "cost": 450,
+        "look": "黒と金、尾に稲妻状の細いライン",
+        "status": "planned_not_final"
+      }
+    ]
+  },
+  "hardMode": {
+    "startSpeedMultiplier": 1.06,
+    "endSpeedMultiplier": 1.12,
+    "enemyHpMultiplier": 1.35,
+    "contactLossMultiplier": 1.25,
+    "warningTimeFloorSeconds": 1.25,
+    "cannotCreateUnavoidableLoss": true,
+    "note": "provisional values pending comparison and touch testing"
+  }
+}

@@ -1,0 +1,1933 @@
+{
+  "schemaVersion": 2,
+  "displayTitle": "婚外恋愛アクションシミュレーター",
+  "stages": [
+    {
+      "id": 1,
+      "title": "始動の回廊",
+      "subtitle": "最初の倍増を楽しめ",
+      "length": 410,
+      "speed": 10.3,
+      "colors": {
+        "tissue": "#812c43",
+        "shadow": "#29101f",
+        "accent": "#37d6bf"
+      },
+      "gimmick": "intro",
+      "events": [
+        {
+          "id": "s01-e01",
+          "at": 32,
+          "type": "gate_row",
+          "title": "最初の選択",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 2
+            },
+            {
+              "lane": 0,
+              "action": "add",
+              "value": 5
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "s01-e02",
+          "at": 64,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "scout",
+          "hp": 46,
+          "strength": 6
+        },
+        {
+          "id": "s01-e03",
+          "at": 89,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "membrane",
+          "damage": 8,
+          "width": 2.4
+        },
+        {
+          "id": "s01-e04",
+          "at": 119,
+          "type": "gate_row",
+          "title": "数か火力か",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "add",
+              "value": 12
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 5
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 8
+            }
+          ]
+        },
+        {
+          "id": "s01-e05",
+          "at": 150,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "swarm",
+          "hp": 84,
+          "strength": 14
+        },
+        {
+          "id": "s01-e06",
+          "at": 178,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "spike",
+          "damage": 20,
+          "width": 2.4
+        },
+        {
+          "id": "s01-e07",
+          "at": 206,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 3
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 45
+            }
+          ]
+        },
+        {
+          "id": "s01-e08",
+          "at": 237,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "scout",
+          "hp": 130,
+          "strength": 35
+        },
+        {
+          "id": "s01-e09",
+          "at": 271,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "membrane",
+          "damage": 18,
+          "width": 2.4
+        },
+        {
+          "id": "s01-e10",
+          "at": 302,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 5
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "id": "s01-e11",
+          "at": 342,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "swarm",
+          "hp": 190,
+          "strength": 65
+        }
+      ],
+      "characterId": "heroine01",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 30,
+      "targetRunSecondsHard": 29.1,
+      "artApproved": false
+    },
+    {
+      "id": 2,
+      "title": "三叉の分岐",
+      "subtitle": "高倍率には代償がある",
+      "length": 470,
+      "speed": 10.6,
+      "colors": {
+        "tissue": "#9d3f4d",
+        "shadow": "#321824",
+        "accent": "#65d8dc"
+      },
+      "gimmick": "branch",
+      "events": [
+        {
+          "id": "s02-e01",
+          "at": 28,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 3
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 2
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 20
+            }
+          ]
+        },
+        {
+          "id": "s02-e02",
+          "at": 62,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "spike",
+          "damage": 22,
+          "width": 2.4
+        },
+        {
+          "id": "s02-e03",
+          "at": 91,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "scout",
+          "hp": 95,
+          "strength": 20
+        },
+        {
+          "id": "s02-e04",
+          "at": 122,
+          "type": "gate_row",
+          "title": "誘惑の×20",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 20
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": "s02-e05",
+          "at": 156,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "spike",
+          "damage": 45,
+          "width": 2.4
+        },
+        {
+          "id": "s02-e06",
+          "at": 192,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "swarm",
+          "hp": 210,
+          "strength": 48
+        },
+        {
+          "id": "s02-e07",
+          "at": 229,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 3
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s02-e08",
+          "at": 267,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "membrane",
+          "damage": 30,
+          "width": 2.4
+        },
+        {
+          "id": "s02-e09",
+          "at": 295,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "chaser",
+          "hp": 260,
+          "strength": 75
+        },
+        {
+          "id": "s02-e10",
+          "at": 337,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 2
+            },
+            {
+              "lane": 0,
+              "action": "add",
+              "value": 70
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "id": "s02-e11",
+          "at": 365,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "rotor",
+          "damage": 42,
+          "width": 2.4
+        },
+        {
+          "id": "s02-e12",
+          "at": 415,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "swarm",
+          "hp": 400,
+          "strength": 95
+        }
+      ],
+      "characterId": "heroine02",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 34,
+      "targetRunSecondsHard": 33.0,
+      "artApproved": false
+    },
+    {
+      "id": 3,
+      "title": "粘液の迷宮",
+      "subtitle": "重くなる横移動を見切れ",
+      "length": 530,
+      "speed": 11.2,
+      "colors": {
+        "tissue": "#8e304f",
+        "shadow": "#261727",
+        "accent": "#f4bb70"
+      },
+      "gimmick": "mucus",
+      "events": [
+        {
+          "id": "s03-e01",
+          "at": 24,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 4
+            },
+            {
+              "lane": 0,
+              "action": "add",
+              "value": 15
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "id": "s03-e02",
+          "at": 62,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "mucus",
+          "damage": 16,
+          "width": 2.9
+        },
+        {
+          "id": "s03-e03",
+          "at": 93,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "mucus",
+          "hp": 150,
+          "strength": 40
+        },
+        {
+          "id": "s03-e04",
+          "at": 135,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 3
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": "s03-e05",
+          "at": 174,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "mucus",
+          "damage": 28,
+          "width": 2.4
+        },
+        {
+          "id": "s03-e06",
+          "at": 201,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "spike",
+          "damage": 44,
+          "width": 2.4
+        },
+        {
+          "id": "s03-e07",
+          "at": 237,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "chaser",
+          "hp": 270,
+          "strength": 80
+        },
+        {
+          "id": "s03-e08",
+          "at": 281,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 5
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 95
+            }
+          ]
+        },
+        {
+          "id": "s03-e09",
+          "at": 327,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "membrane",
+          "damage": 38,
+          "width": 2.6
+        },
+        {
+          "id": "s03-e10",
+          "at": 370,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "mucus",
+          "hp": 340,
+          "strength": 95
+        },
+        {
+          "id": "s03-e11",
+          "at": 414,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 8
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s03-e12",
+          "at": 471,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "swarm",
+          "hp": 520,
+          "strength": 130
+        }
+      ],
+      "characterId": "heroine03",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 36,
+      "targetRunSecondsHard": 34.9,
+      "artApproved": false
+    },
+    {
+      "id": 4,
+      "title": "赤い交差点",
+      "subtitle": "射撃を強化して突破",
+      "length": 585,
+      "speed": 11.5,
+      "colors": {
+        "tissue": "#78293a",
+        "shadow": "#160c1c",
+        "accent": "#ffc66d"
+      },
+      "gimmick": "crossroads",
+      "events": [
+        {
+          "id": "s04-e01",
+          "at": 24,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 2
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "id": "s04-e02",
+          "at": 66,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "scout",
+          "hp": 210,
+          "strength": 50
+        },
+        {
+          "id": "s04-e03",
+          "at": 107,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "rotor",
+          "damage": 45,
+          "width": 2.4
+        },
+        {
+          "id": "s04-e04",
+          "at": 150,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "rapid",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 17
+            }
+          ]
+        },
+        {
+          "id": "s04-e05",
+          "at": 194,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "artillery",
+          "hp": 310,
+          "strength": 100
+        },
+        {
+          "id": "s04-e06",
+          "at": 231,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "spike",
+          "damage": 42,
+          "width": 2.4
+        },
+        {
+          "id": "s04-e07",
+          "at": 273,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 10
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s04-e08",
+          "at": 318,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "chaser",
+          "hp": 480,
+          "strength": 120
+        },
+        {
+          "id": "s04-e09",
+          "at": 363,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "rotor",
+          "damage": 64,
+          "width": 2.4
+        },
+        {
+          "id": "s04-e10",
+          "at": 397,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "artillery",
+          "hp": 550,
+          "strength": 125
+        },
+        {
+          "id": "s04-e11",
+          "at": 439,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "add",
+              "value": 160
+            },
+            {
+              "lane": 0,
+              "action": "rapid",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "s04-e12",
+          "at": 515,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "swarm",
+          "hp": 760,
+          "strength": 190
+        }
+      ],
+      "characterId": "heroine04",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 39,
+      "targetRunSecondsHard": 37.8,
+      "artApproved": false
+    },
+    {
+      "id": 5,
+      "title": "残留軍団",
+      "subtitle": "装甲の先に隊長が待つ",
+      "length": 635,
+      "speed": 11.5,
+      "colors": {
+        "tissue": "#7b3055",
+        "shadow": "#180d2c",
+        "accent": "#94d8fd"
+      },
+      "gimmick": "rivals",
+      "events": [
+        {
+          "id": "s05-e01",
+          "at": 30,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 5
+            },
+            {
+              "lane": 1,
+              "action": "shield",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s05-e02",
+          "at": 78,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "armor",
+          "hp": 360,
+          "strength": 90
+        },
+        {
+          "id": "s05-e03",
+          "at": 120,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "membrane",
+          "damage": 40,
+          "width": 2.4
+        },
+        {
+          "id": "s05-e04",
+          "at": 162,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 8
+            },
+            {
+              "lane": 0,
+              "action": "rapid",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 20
+            }
+          ]
+        },
+        {
+          "id": "s05-e05",
+          "at": 206,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "swarm",
+          "hp": 630,
+          "strength": 170
+        },
+        {
+          "id": "s05-e06",
+          "at": 248,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "armor",
+          "hp": 700,
+          "strength": 200
+        },
+        {
+          "id": "s05-e07",
+          "at": 293,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 15
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "id": "s05-e08",
+          "at": 341,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "rotor",
+          "damage": 80,
+          "width": 2.4
+        },
+        {
+          "id": "s05-e09",
+          "at": 387,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "artillery",
+          "hp": 790,
+          "strength": 230
+        },
+        {
+          "id": "s05-e10",
+          "at": 433,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "divide",
+              "value": 2
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "id": "s05-e11",
+          "at": 487,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "armor",
+          "hp": 960,
+          "strength": 280
+        },
+        {
+          "id": "s05-e12",
+          "at": 550,
+          "type": "boss",
+          "lane": 0,
+          "boss": "rival_captain",
+          "hp": 1450,
+          "strength": 410
+        }
+      ],
+      "characterId": "heroine05",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 42,
+      "targetRunSecondsHard": 40.7,
+      "artApproved": false
+    },
+    {
+      "id": 6,
+      "title": "脈動回廊",
+      "subtitle": "縮む壁のリズムを掴め",
+      "length": 675,
+      "speed": 11.8,
+      "colors": {
+        "tissue": "#6d2431",
+        "shadow": "#1a0a15",
+        "accent": "#e9b860"
+      },
+      "gimmick": "pulse",
+      "events": [
+        {
+          "id": "s06-e01",
+          "at": 25,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 5
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s06-e02",
+          "at": 75,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "pulsing",
+          "damage": 65,
+          "width": 2.8
+        },
+        {
+          "id": "s06-e03",
+          "at": 109,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "pulsing",
+          "damage": 70,
+          "width": 2.8
+        },
+        {
+          "id": "s06-e04",
+          "at": 155,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "chaser",
+          "hp": 400,
+          "strength": 120
+        },
+        {
+          "id": "s06-e05",
+          "at": 201,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 10
+            },
+            {
+              "lane": 0,
+              "action": "rapid",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 23
+            }
+          ]
+        },
+        {
+          "id": "s06-e06",
+          "at": 246,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "pulsing",
+          "damage": 84,
+          "width": 2.4
+        },
+        {
+          "id": "s06-e07",
+          "at": 290,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "artillery",
+          "hp": 630,
+          "strength": 210
+        },
+        {
+          "id": "s06-e08",
+          "at": 337,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 6
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s06-e09",
+          "at": 391,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "pulsing",
+          "damage": 92,
+          "width": 2.4
+        },
+        {
+          "id": "s06-e10",
+          "at": 439,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "rotor",
+          "damage": 90,
+          "width": 2.4
+        },
+        {
+          "id": "s06-e11",
+          "at": 495,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "armor",
+          "hp": 1000,
+          "strength": 290
+        },
+        {
+          "id": "s06-e12",
+          "at": 546,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "divide",
+              "value": 3
+            },
+            {
+              "lane": 0,
+              "action": "add",
+              "value": 270
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": "s06-e13",
+          "at": 606,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "swarm",
+          "hp": 1330,
+          "strength": 360
+        }
+      ],
+      "characterId": "heroine06",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 45,
+      "targetRunSecondsHard": 43.6,
+      "artApproved": false
+    },
+    {
+      "id": 7,
+      "title": "免疫の庭",
+      "subtitle": "装甲と防御を読み解け",
+      "length": 715,
+      "speed": 11.8,
+      "colors": {
+        "tissue": "#b25b69",
+        "shadow": "#221b37",
+        "accent": "#b7e49f"
+      },
+      "gimmick": "immune",
+      "events": [
+        {
+          "id": "s07-e01",
+          "at": 22,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "id": "s07-e02",
+          "at": 70,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "immune",
+          "hp": 520,
+          "strength": 100
+        },
+        {
+          "id": "s07-e03",
+          "at": 119,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "spike",
+          "damage": 90,
+          "width": 2.4
+        },
+        {
+          "id": "s07-e04",
+          "at": 164,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "rapid",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 12
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 26
+            }
+          ]
+        },
+        {
+          "id": "s07-e05",
+          "at": 209,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "armor",
+          "hp": 670,
+          "strength": 210
+        },
+        {
+          "id": "s07-e06",
+          "at": 258,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "mucus",
+          "damage": 65,
+          "width": 2.4
+        },
+        {
+          "id": "s07-e07",
+          "at": 300,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 250
+            }
+          ]
+        },
+        {
+          "id": "s07-e08",
+          "at": 346,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "immune",
+          "hp": 970,
+          "strength": 270
+        },
+        {
+          "id": "s07-e09",
+          "at": 402,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "artillery",
+          "hp": 1130,
+          "strength": 320
+        },
+        {
+          "id": "s07-e10",
+          "at": 451,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "divide",
+              "value": 2
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "shield",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s07-e11",
+          "at": 495,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "membrane",
+          "damage": 100,
+          "width": 2.4
+        },
+        {
+          "id": "s07-e12",
+          "at": 545,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "immune",
+          "hp": 1300,
+          "strength": 360
+        },
+        {
+          "id": "s07-e13",
+          "at": 628,
+          "type": "boss",
+          "lane": 0,
+          "boss": "immune_sentinel",
+          "hp": 2100,
+          "strength": 600
+        }
+      ],
+      "characterId": "heroine07",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 48,
+      "targetRunSecondsHard": 46.6,
+      "artApproved": false
+    },
+    {
+      "id": 8,
+      "title": "逆流の渦",
+      "subtitle": "流れに逆らって倍率を取れ",
+      "length": 765,
+      "speed": 12.1,
+      "colors": {
+        "tissue": "#763d6c",
+        "shadow": "#181127",
+        "accent": "#f57c86"
+      },
+      "gimmick": "current",
+      "events": [
+        {
+          "id": "s08-e01",
+          "at": 26,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 5
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "shield",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s08-e02",
+          "at": 78,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "current",
+          "damage": 55,
+          "width": 2.8
+        },
+        {
+          "id": "s08-e03",
+          "at": 124,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "chaser",
+          "hp": 720,
+          "strength": 200
+        },
+        {
+          "id": "s08-e04",
+          "at": 170,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 20
+            },
+            {
+              "lane": 0,
+              "action": "rapid",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 29
+            }
+          ]
+        },
+        {
+          "id": "s08-e05",
+          "at": 218,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "current",
+          "damage": 85,
+          "width": 2.4
+        },
+        {
+          "id": "s08-e06",
+          "at": 253,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "rotor",
+          "damage": 120,
+          "width": 2.4
+        },
+        {
+          "id": "s08-e07",
+          "at": 296,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "swarm",
+          "hp": 930,
+          "strength": 270
+        },
+        {
+          "id": "s08-e08",
+          "at": 346,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 6
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s08-e09",
+          "at": 398,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "artillery",
+          "hp": 1250,
+          "strength": 390
+        },
+        {
+          "id": "s08-e10",
+          "at": 443,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "current",
+          "damage": 120,
+          "width": 2.4
+        },
+        {
+          "id": "s08-e11",
+          "at": 495,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "armor",
+          "hp": 1560,
+          "strength": 430
+        },
+        {
+          "id": "s08-e12",
+          "at": 550,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "divide",
+              "value": 3
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "rapid",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s08-e13",
+          "at": 604,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "spike",
+          "damage": 130,
+          "width": 2.4
+        },
+        {
+          "id": "s08-e14",
+          "at": 692,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "chaser",
+          "hp": 2200,
+          "strength": 570
+        }
+      ],
+      "characterId": "heroine08",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 51,
+      "targetRunSecondsHard": 49.5,
+      "artApproved": false
+    },
+    {
+      "id": 9,
+      "title": "三重封鎖",
+      "subtitle": "全ての学習を試せ",
+      "length": 815,
+      "speed": 12.5,
+      "colors": {
+        "tissue": "#4e1c35",
+        "shadow": "#100d1c",
+        "accent": "#45d8e3"
+      },
+      "gimmick": "lockdown",
+      "events": [
+        {
+          "id": "s09-e01",
+          "at": 25,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 8
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "shield",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s09-e02",
+          "at": 81,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "pulsing",
+          "damage": 120,
+          "width": 2.4
+        },
+        {
+          "id": "s09-e03",
+          "at": 136,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "artillery",
+          "hp": 1050,
+          "strength": 350
+        },
+        {
+          "id": "s09-e04",
+          "at": 183,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 20
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 32
+            }
+          ]
+        },
+        {
+          "id": "s09-e05",
+          "at": 238,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "membrane",
+          "damage": 110,
+          "width": 2.4
+        },
+        {
+          "id": "s09-e06",
+          "at": 291,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "armor",
+          "hp": 1370,
+          "strength": 370
+        },
+        {
+          "id": "s09-e07",
+          "at": 338,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "current",
+          "damage": 115,
+          "width": 2.4
+        },
+        {
+          "id": "s09-e08",
+          "at": 387,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 12
+            },
+            {
+              "lane": 1,
+              "action": "add",
+              "value": 400
+            }
+          ]
+        },
+        {
+          "id": "s09-e09",
+          "at": 435,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "immune",
+          "hp": 1700,
+          "strength": 500
+        },
+        {
+          "id": "s09-e10",
+          "at": 497,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "rotor",
+          "damage": 160,
+          "width": 2.4
+        },
+        {
+          "id": "s09-e11",
+          "at": 553,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "swarm",
+          "hp": 2020,
+          "strength": 570
+        },
+        {
+          "id": "s09-e12",
+          "at": 612,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "divide",
+              "value": 2
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s09-e13",
+          "at": 676,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "pulsing",
+          "damage": 170,
+          "width": 2.4
+        },
+        {
+          "id": "s09-e14",
+          "at": 741,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "armor",
+          "hp": 2650,
+          "strength": 770
+        }
+      ],
+      "characterId": "heroine09",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 54,
+      "targetRunSecondsHard": 52.4,
+      "artApproved": false
+    },
+    {
+      "id": 10,
+      "title": "最終侵入",
+      "subtitle": "最後まで生き残れ",
+      "length": 885,
+      "speed": 12.7,
+      "colors": {
+        "tissue": "#61283d",
+        "shadow": "#130e1c",
+        "accent": "#f4dfb4"
+      },
+      "gimmick": "finale",
+      "events": [
+        {
+          "id": "s10-e01",
+          "at": 26,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "multiply",
+              "value": 30
+            },
+            {
+              "lane": 0,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "shield",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s10-e02",
+          "at": 77,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "chaser",
+          "hp": 1250,
+          "strength": 320
+        },
+        {
+          "id": "s10-e03",
+          "at": 126,
+          "type": "obstacle",
+          "lane": -1,
+          "kind": "rotor",
+          "damage": 150,
+          "width": 2.4
+        },
+        {
+          "id": "s10-e04",
+          "at": 171,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 20
+            },
+            {
+              "lane": 1,
+              "action": "subtract",
+              "value": 35
+            }
+          ]
+        },
+        {
+          "id": "s10-e05",
+          "at": 218,
+          "type": "enemy",
+          "lane": 0,
+          "enemy": "immune",
+          "hp": 1560,
+          "strength": 470
+        },
+        {
+          "id": "s10-e06",
+          "at": 275,
+          "type": "obstacle",
+          "lane": 1,
+          "kind": "pulsing",
+          "damage": 170,
+          "width": 2.4
+        },
+        {
+          "id": "s10-e07",
+          "at": 329,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "armor",
+          "hp": 1880,
+          "strength": 590
+        },
+        {
+          "id": "s10-e08",
+          "at": 387,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "add",
+              "value": 500
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "id": "s10-e09",
+          "at": 440,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "current",
+          "damage": 160,
+          "width": 2.4
+        },
+        {
+          "id": "s10-e10",
+          "at": 502,
+          "type": "enemy",
+          "lane": 1,
+          "enemy": "artillery",
+          "hp": 2300,
+          "strength": 640
+        },
+        {
+          "id": "s10-e11",
+          "at": 553,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "divide",
+              "value": 3
+            },
+            {
+              "lane": 0,
+              "action": "multiply",
+              "value": 20
+            },
+            {
+              "lane": 1,
+              "action": "attack",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "s10-e12",
+          "at": 607,
+          "type": "enemy",
+          "lane": -1,
+          "enemy": "swarm",
+          "hp": 2650,
+          "strength": 710
+        },
+        {
+          "id": "s10-e13",
+          "at": 674,
+          "type": "obstacle",
+          "lane": 0,
+          "kind": "membrane",
+          "damage": 210,
+          "width": 2.4
+        },
+        {
+          "id": "s10-e14",
+          "at": 729,
+          "type": "gate_row",
+          "title": "",
+          "choices": [
+            {
+              "lane": -1,
+              "action": "attack",
+              "value": 1
+            },
+            {
+              "lane": 0,
+              "action": "shield",
+              "value": 1
+            },
+            {
+              "lane": 1,
+              "action": "multiply",
+              "value": 30
+            }
+          ]
+        },
+        {
+          "id": "s10-e15",
+          "at": 802,
+          "type": "boss",
+          "lane": 0,
+          "boss": "crowned_rival",
+          "hp": 3750,
+          "strength": 1150
+        }
+      ],
+      "characterId": "heroine10",
+      "portraitRequired": true,
+      "targetRunSecondsNormal": 58,
+      "targetRunSecondsHard": 56.3,
+      "artApproved": false
+    }
+  ],
+  "developmentGate": "art_approval_required_before_feature_expansion"
+}
