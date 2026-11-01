@@ -1,0 +1,15 @@
+{
+ "checkedAt":"2026-11-01",
+ "sourceRepository":"SUSANO-OOO/Zombieee",
+ "sourceCommit":"038ce47fc84f433fb724f00b87fc28b63e93f310",
+ "sourceManifest":"assets/source/v177/paisen/runtime-provenance.json",
+ "sourceGenerator":"scripts/build-v177-paisen-identity.mjs",
+ "sourceReadOnly":true,
+ "ownerRightsConfirmed":true,
+ "rightsEvidence":"docs/decisions/2026-11-01-owner-answers.md",
+ "newGameArtApproved":false,
+ "references":[
+  {"path":"references/paisen/paisen-identity-r2.webp","sourcePath":"public/art/v100/portraits/paisen-identity-r2.webp","sha256":"2abe752277e3c7947755b9af17c77d9e563233073ad428dcda8397106b3b2342","width":1024,"height":1536,"bytes":738094,"role":"identity_master"},
+  {"path":"references/paisen/paisen-formation-card-r3.webp","sourcePath":"public/art/v100/portraits/paisen-formation-card-r3.webp","sha256":"75a83b82d6c0f6721b3bbcc9a638a276a74a4166179bf15b9839a4ebbb7da573","width":512,"height":512,"bytes":160328,"role":"card_from_same_face_master"}
+ ]
+}

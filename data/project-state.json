@@ -1,20 +1,25 @@
 {
- "schemaVersion":1,
+ "schemaVersion":2,
  "phase":"asset_preparation",
  "runtime":"concept_review_gallery",
- "openProductDecisions":["Q01","Q02","Q03","Q04","Q05","Q06","Q07","Q08","Q09","Q10","Q11","Q12","Q13","Q14","Q15"],
+ "ownerDecisionRecord":"docs/decisions/2026-11-01-owner-answers.md",
+ "openProductDecisions":["Q11"],
+ "conditionalDecisions":[{"id":"Q10","onlyIf":"new_paid_resource_required","default":"no_new_spend"}],
+ "autonomousLowRiskMergeAuthorized":true,
+ "privacyRewriteAuthorized":true,
+ "privacyExecutionEvidence":"Owner-authorized email privacy workflow verification.json",
  "releaseChecks":[
- {"id":"production_game","status":"not_verified","evidence":null},
- {"id":"normal_10","status":"not_verified","evidence":null},
- {"id":"hard_10","status":"not_verified","evidence":null},
- {"id":"secret_stage","status":"not_verified","evidence":null},
- {"id":"game_feel","status":"not_verified","evidence":null},
- {"id":"ios_safari_real_device","status":"not_verified","evidence":null},
- {"id":"android_chrome_real_device","status":"not_verified","evidence":null},
- {"id":"audio","status":"not_verified","evidence":null},
- {"id":"save_recovery","status":"not_verified","evidence":null},
- {"id":"licenses_privacy","status":"not_verified","evidence":null},
- {"id":"deployment_smoke_rollback","status":"not_verified","evidence":null}
+  {"id":"production_game","status":"not_verified","evidence":null},
+  {"id":"normal_10","status":"not_verified","evidence":null},
+  {"id":"hard_10","status":"not_verified","evidence":null},
+  {"id":"secret_stage","status":"not_verified","evidence":null},
+  {"id":"game_feel","status":"not_verified","evidence":null},
+  {"id":"ios_safari_real_device","status":"not_verified","evidence":null},
+  {"id":"android_chrome_real_device","status":"not_verified","evidence":null},
+  {"id":"audio","status":"not_verified","evidence":null},
+  {"id":"save_recovery","status":"not_verified","evidence":null},
+  {"id":"licenses_privacy","status":"not_verified","evidence":null},
+  {"id":"deployment_smoke_rollback","status":"not_verified","evidence":null}
  ],
  "releaseAuthorization":{"status":"not_requested","evidence":null}
 }

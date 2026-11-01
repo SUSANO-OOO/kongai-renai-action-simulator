@@ -1,43 +1,22 @@
 {
-  "schemaVersion": 1,
-  "allRunsStartWith": 1,
-  "goalMinimum": 100,
-  "coinEarners": [
-    "enemy_drop",
-    "track_pickup",
-    "clear_bonus"
-  ],
-  "skinPurchasesCosmeticOnly": true,
-  "skins": [
-    {
-      "id": "normal",
-      "cost": 0
-    },
-    {
-      "id": "spartan",
-      "cost": 500
-    },
-    {
-      "id": "nightmare",
-      "cost": 1200
-    }
-  ],
-  "userLevelCombatBonus": false,
-  "ranks": [
-    "弱小精子",
-    "迷子の精子",
-    "駆け出し精子",
-    "根性精子",
-    "暴走精子",
-    "歴戦の精子",
-    "無敵の勘違い",
-    "突撃隊長",
-    "スパルタ精子",
-    "百戦錬磨の精子",
-    "ナイトメア精子",
-    "不死身の精子",
-    "精界の覇者",
-    "伝説の生存者",
-    "精子神"
-  ]
+ "schemaVersion":2,
+ "allRunsStartWith":1,
+ "goalMinimum":100,
+ "stageUnlock":{"order":"sequential","initialUnlocked":[1],"unlockNextOnClearModes":["normal","hard"],"sharedAcrossDifficulties":true,"modePolicyBasis":"designer_default_within_owner_sequential_unlock"},
+ "difficulty":{"ordinaryModes":["normal","hard"],"hardAvailableFromStart":true,"hardRequiresNormalClear":false},
+ "secret":{"stageId":11,"modes":["hard"],"requiresAllHardStages":[1,2,3,4,5,6,7,8,9,10]},
+ "coinEarners":["enemy_drop","track_pickup","clear_bonus"],
+ "runRewards":{"collectedCoinsAreProvisional":true,"bankOn":"clear_only","lossPayout":0,"lossXp":0,"lossXpBasis":"designer_initial_default","preexistingWalletUnaffectedByDefeat":true,"settlement":"once_per_run_id"},
+ "skinPurchasesCosmeticOnly":true,
+ "skins":[
+  {"id":"normal","label":"ノーマル","default":true,"cost":0,"assetId":"player-base"},
+  {"id":"spartan","label":"スパルタ","default":false,"cost":500,"assetId":"player-skin-01"},
+  {"id":"nightmare","label":"ナイトメア","default":false,"cost":1200,"assetId":"player-skin-02"},
+  {"id":"aurora","label":"オーロラ","default":false,"cost":1800,"assetId":"player-skin-03"}
+ ],
+ "skinNamesAndPricesStatus":"designer_proposal_pending_asset_review",
+ "userLevelCombatBonus":false,
+ "records":{"scope":"per_stage_and_difficulty","primary":"best_surviving_units","secondary":["coins_on_clear","enemies_defeated","clear_time"],"onlineLeaderboard":false},
+ "ranks":["弱小精子","迷子の精子","駆け出し精子","根性精子","暴走精子","歴戦の精子","無敵の勘違い","突撃隊長","スパルタ精子","百戦錬磨の精子","ナイトメア精子","不死身の精子","精界の覇者","伝説の生存者","精子神"],
+ "rankNamesStatus":"designer_proposal"
 }
