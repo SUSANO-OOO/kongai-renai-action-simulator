@@ -1,78 +1,39 @@
 # 婚外恋愛アクションシミュレーター
 
-**スマホブラウザ向け・縦型3D群集ランナー／オートシューティング／成人向け風刺コメディ**
+スマホ縦型の3D群集ランナー＋自動射撃。1体から増やし、3つの進路を自由に選び、群れを守って100体以上でゴールする。
 
-> **現在の正確な状態：アート先行の企画・査定段階。** このリポジトリはスマホ縦長390×844のSVGコンペ画像12枚を閲覧できるレビューワークベンチと仕様書・素材台帳を収録しています。完成ゲーム、全11面の完成3D、最終女性キャラクター素材、音響はまだ完成していません。
+**現在は全素材の先行制作・査定準備段階。** ルートの `src/` はコンペ閲覧サイトであり完成ゲームではない。モデル、音、完成UI、全20通常ラン＋秘密面の製品QAは未完了。既存のテスト成功と製品完成を混同しない。
 
-## 最初に見るべき画面
+## Codexへの入口
+[開発ルール](AGENTS.md) → [引き継ぎ](docs/HANDOFF.md) → [製品の本質と確定条件](docs/PRODUCT_CONTRACT.md)。
+そのまま渡す文章は [CODEX_START_PROMPT.md](CODEX_START_PROMPT.md)。本人に必要な判断は [Q01〜Q15](docs/DECISIONS_AND_OPEN_QUESTIONS.md)。
 
-下記は**すべて縦型の個別画面**です。高精細WebPは旧ビジュアルラフ、SVGは3レーンや勝敗の正確な構図を確認するための設計画です。いずれも完成3Dゲーム画面ではありません。
+作り方は固定しない。完成素材の一括査定という本人指定を守りながら、素材検収用シーン・入力/描画/音の検証は先行してよい。本格製品の統合は素材承認後。指示を増やすことではなく、判断と証拠を残して前へ進むことを優先する。
 
-<table><tr><th>タイトル</th><th>女性ステージ選択</th><th>ゲート（旧ラフ）</th><th>ゴール（旧ラフ）</th></tr><tr>
-<td><img src="docs/concept-art/raster-drafts/01_title.webp" width="170" alt="縦型タイトル"/></td>
-<td><img src="docs/concept-art/raster-drafts/02_stage_select.webp" width="170" alt="ステージ選択"/></td>
-<td><img src="docs/concept-art/raster-drafts/04_blue_red_gates.webp" width="170" alt="ゲート選択"/></td>
-<td><img src="docs/concept-art/raster-drafts/08_goal_approach.webp" width="170" alt="ゴール接近"/></td>
-</tr></table>
-
-**仕様を守った3進路案：** [青赤ゲート](docs/concept-art/04_blue_red_gates.svg) ／ **ゴールの2分岐：** [白金SUCCESS](docs/concept-art/08_clear.svg)・[紫FAILED](docs/concept-art/09_failed.svg)
-
-## 縦型コンペをプレビュー
-
+## 起動・検査
 ```sh
 npm install
 npm run dev
-```
-
-ブラウザの画面で、タイトル→ステージ選択→開始→ゲート→戦闘→ボス→ゴール→SUCCESS/FAILED→リザルト→スキン→SECRETの順に、各画面のコンペ画像を確認できます。画像は `docs/concept-art/` に編集可能なSVGとして保管し、Viteで公開用にコピーする `public/concept-art/` にも同じ内容を置いています。
-
-## 変更不可のルール
-
-- **3レーンの見た目＋左右自由X移動**（2レーンではない）
-- 初期人数は全ステージ **必ず1体**
-- 青ゲートで増員（×、+）、赤ゲートで減員（−、÷）
-- 0体で即敗北、ゴールに100体以上生存で成功
-- 同じ3Dゴールで100体以上なら白金色の発光、99体以下なら紫の吸引渦
-- 通常10ステージ（成人女性10人）＋HARD10面クリアで解放されるパイセン面
-- コイン/3スキン/XP/15ランクの称号。恒久的戦闘性能ブーストなし
-- **完成モデル・UI・VFX・BGM/SEを先に全制作し、3周検査→本人査定→承認後に本格実装**
-
-詳細：[`AGENTS.md`](AGENTS.md) ／ [`CODEX_START_PROMPT.md`](CODEX_START_PROMPT.md) ／ [`docs/THREE_LANE_CONTROL.md`](docs/THREE_LANE_CONTROL.md) ／ [`docs/GOAL_AND_GATE_DIRECTOR_SPEC.md`](docs/GOAL_AND_GATE_DIRECTOR_SPEC.md) ／ [`docs/ART_FIRST_APPROVAL.md`](docs/ART_FIRST_APPROVAL.md)
-
-## コンペ画面一覧
-
-| No. | 画面 | ファイル |
-|---:|---|---|
-| 1 | タイトル | [01_title.svg](docs/concept-art/01_title.svg) |
-| 2 | ステージ選択 | [02_stage_select.svg](docs/concept-art/02_stage_select.svg) |
-| 3 | 1体スタート | [03_one_start.svg](docs/concept-art/03_one_start.svg) |
-| 4 | **青赤の3レーン分岐** | [04_blue_red_gates.svg](docs/concept-art/04_blue_red_gates.svg) |
-| 5 | 敵との戦闘 | [05_enemy_wave.svg](docs/concept-art/05_enemy_wave.svg) |
-| 6 | ボス戦 | [06_boss.svg](docs/concept-art/06_boss.svg) |
-| 7 | ゴール接近 | [07_goal.svg](docs/concept-art/07_goal.svg) |
-| 8 | 白金色SUCCESS | [08_clear.svg](docs/concept-art/08_clear.svg) |
-| 9 | 紫色FAILED | [09_failed.svg](docs/concept-art/09_failed.svg) |
-| 10 | リザルト | [10_result.svg](docs/concept-art/10_result.svg) |
-| 11 | スキン | [11_skins.svg](docs/concept-art/11_skins.svg) |
-| 12 | 秘密パイセン | [12_secret.svg](docs/concept-art/12_secret.svg) |
-
-## 高精細の旧コンペ画像（未承認）
-
-[WebPラフ11枚](docs/concept-art/raster-drafts/) は以前に制作した縦型（900×1600＝9:16）のラスターデザイン案です。**描画品質の雰囲気を見る参考**であり、誤字・2レーンに見える構図・実際の3Dゴールとは異なる演出等があるため、実装仕様の基準にはできません。レビューワークベンチで「正確な構図（SVG）」と「高精細ラフ（WebP）」を切り替えて比較できます。
-
-## 旧ゲーム試作の保存
-
-[旧試作ソース56ファイル](prototype/) は従来の初期V3から元データを移して、ゲームコード・ステージイベント・テスト・旧ドキュメントを参照可能にしたものです。元のtar.gzも同梱。**完成ゲームではないため、ルートのコンペ査定画面と明確に分離**します。
-
-## 参照素材
-
-[`references/paisen/`](references/paisen/) は既存の本人制作ゲーム `SUSANO-OOO/Zombieee` から、読み取りのみで取り込んだ参照画像3点です。**原作側のリポジトリは変更していません。** パイセンの新作内での使用は査定後に決定します。
-
-## 検査
-
-```sh
 npm test
 npm run build
+npm run check:assets
+npm run check:release
 ```
+初回の環境準備は [CODEX_ENVIRONMENT](docs/CODEX_ENVIRONMENT.md)。lockfileは実環境で生成・登録後に `npm ci` へ切り替える。最後の2コマンドは未制作・未承認ならNOT_READYになる。それをCI不良と勘違いして条件を削らない。
 
-`npm test` はゲーム完成テストではなく、仕様/データ/コンペ画像の整合性検査です。スマホ実機のプレイ確認と3Dモデル査定は別途必須です。
+## 正式な核
+- スマホ縦画面、3つの視覚的進路＋連続X移動、自動前進と自動射撃。
+- 全ラン1体スタート。青増員、赤減員、道中強化。0体で終わり。
+- ゴール衝突時100体以上なら白金発光、1〜99体なら同じゴールが紫の吸引へ変化。
+- 成人女性10人の通常10面＋NORMAL/HARD、通常HARD全制覇でパイセンの隠し面。
+- コイン・外見スキン・ユーザーレベル・選択称号。永続戦闘強化なし。
+- 全素材先行、3周の観点別監査、本人査定。本編の面白さは統合後の実プレイで別検査。
+
+## 素材と参考資料
+[縦型SVG構図案12枚](docs/concept-art/) と [旧WebPラフ11枚](docs/concept-art/raster-drafts/) は未承認。SVGの390×844は縦長だが9:16ではない。900×1600が9:16。旧ラフの2レーンに見える画面・誤字・顔の成功失敗演出は実装基準にしない。
+[パイセン参照](references/paisen/) は別作品からの読み取りコピー。元の `Zombieee` は変更禁止。公開利用権の確認が必要。
+[旧試作](prototype/) は参考保存であり、本体の実装基盤として自動採用するものではない。
+
+## 監査・運用
+[今回の監査](docs/audits/2026-11-01-handoff-audit.md) ／ [再開ログ](docs/WORK_LOG.md) ／ [素材査定](docs/ART_FIRST_APPROVAL.md) ／ [3弱点](docs/THREE_WEAKNESSES_PREVENTION.md) ／ [公開の完成条件](docs/RELEASE_ACCEPTANCE.md)。
+画像・モデルの作成、テスト、本人承認、公開は別の状態として記録する。Publicリポジトリにしたことは、完成・公開サイト有効化・素材利用許諾・OSSライセンス付与の証拠ではない。
